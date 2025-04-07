@@ -4,6 +4,7 @@ from nba_data.utils.api_client import api_client
 import logging
 from datetime import datetime
 from django.utils.timezone import make_aware
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -13,22 +14,30 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--season', type=int, required=True, 
                             help='Season to import (e.g., 2023 for 2023-2024 season)')
-        parser.add_argument('--max-pages', type=int, default=25, 
+        parser.add_argument('--max-pages', type=int, default=100, 
                             help='Maximum number of pages to import')
+        parser.add_argument('--start-cursor', type=int, default=None,
+                            help='API cursor to start fetching from (for resuming imports)')
 
     def handle(self, *args, **options):
         season = options['season']
         max_pages = options['max_pages']
+        start_cursor = options['start_cursor']
         self.stdout.write(f'Importing NBA games for {season}-{season+1} season (up to {max_pages} pages)...')
+        if start_cursor:
+            self.stdout.write(f'Starting from cursor: {start_cursor}')
         
-        try:
-            page_count = 0
-            next_cursor = None
+        page_count = 0
+        next_cursor = start_cursor
+        games_processed_in_session = 0
+        max_retries = 5
+        current_retries = 0
+
+        while page_count < max_pages:
+            page_count += 1
+            self.stdout.write(f'Fetching page {page_count} of maximum {max_pages} (Cursor: {next_cursor})...')
             
-            while page_count < max_pages:
-                page_count += 1
-                self.stdout.write(f'Fetching page {page_count} of maximum {max_pages}...')
-                
+            try:
                 # Get games from API
                 params = {
                     'per_page': 25,
@@ -38,8 +47,11 @@ class Command(BaseCommand):
                 if next_cursor:
                     params['cursor'] = next_cursor
                 
-                games_data, next_cursor = api_client.get_games(**params)
+                games_data, current_cursor_result = api_client.get_games(**params)
                 
+                # Reset retries on successful call
+                current_retries = 0
+
                 if not games_data:
                     self.stdout.write('No more games found.')
                     break
@@ -63,9 +75,13 @@ class Command(BaseCommand):
                     game_datetime = None
                     if game_data.get('datetime'):
                         try:
-                            game_datetime = make_aware(datetime.strptime(game_data['datetime'], '%Y-%m-%d %H:%M:%S%z'))
-                        except ValueError:
-                            self.stdout.write(self.style.WARNING(f"Could not parse datetime: {game_data['datetime']}"))
+                            dt_str = game_data['datetime']
+                            if dt_str.endswith('Z'):
+                                game_datetime = make_aware(datetime.strptime(dt_str, '%Y-%m-%dT%H:%M:%S.%fZ'))
+                            else:
+                                game_datetime = make_aware(datetime.strptime(dt_str, '%Y-%m-%dT%H:%M:%SZ'))
+                        except ValueError as dt_err:
+                            self.stdout.write(self.style.WARNING(f"Could not parse datetime: {game_data.get('datetime')} - Error: {dt_err}"))
                     
                     # Update or create game
                     game, created = Game.objects.update_or_create(
@@ -87,14 +103,46 @@ class Command(BaseCommand):
                     
                     action = 'Created' if created else 'Updated'
                     self.stdout.write(f'{action} game: {visitor_team.abbreviation} @ {home_team.abbreviation} ({game_date})')
+                    games_processed_in_session += 1
                 
+                # Update next_cursor ONLY after successful processing of the page
+                next_cursor = current_cursor_result
+
                 # Check if we have a next cursor
                 if not next_cursor:
                     self.stdout.write('No more pages available.')
                     break
-            
-            self.stdout.write(self.style.SUCCESS('Successfully imported games'))
-            
-        except Exception as e:
-            self.stdout.write(self.style.ERROR(f'Error importing games: {str(e)}'))
-            logger.error(f'Error importing games: {str(e)}', exc_info=True)
+
+            except Exception as e:
+                if "Too Many Requests" in str(e):
+                    if current_retries < max_retries:
+                        current_retries += 1
+                        wait_time = 60 * current_retries
+                        self.stdout.write(self.style.WARNING(
+                            f"Rate limit hit. Retrying page {page_count} in {wait_time} seconds... (Attempt {current_retries}/{max_retries})"
+                        ))
+                        time.sleep(wait_time)
+                        page_count -= 1
+                        continue
+                    else:
+                        self.stdout.write(self.style.ERROR(
+                            f"Max retries reached for rate limit on page {page_count}. Stopping."
+                        ))
+                        self.stdout.write(f"To resume later, use: --start-cursor {next_cursor}")
+                        logger.error(f'Rate limit max retries reached: {str(e)}', exc_info=True)
+                        break
+                else:
+                    self.stdout.write(self.style.ERROR(f'Error importing games on page {page_count}: {str(e)}'))
+                    self.stdout.write(f"Error occurred. Last successful cursor was: {next_cursor}")
+                    self.stdout.write(f"Consider resuming with: --start-cursor {next_cursor}")
+                    logger.error(f'Error importing games: {str(e)}', exc_info=True)
+                    break
+
+        if page_count >= max_pages:
+            self.stdout.write(self.style.WARNING(f'Reached max pages ({max_pages}).'))
+            if next_cursor:
+                self.stdout.write(f"To continue fetching, run again with: --start-cursor {next_cursor}")
+
+        self.stdout.write(self.style.SUCCESS(f'Import command finished. Processed {games_processed_in_session} games in this run.'))
+        if next_cursor:
+            self.stdout.write(f"Last API cursor processed was: {next_cursor}")
