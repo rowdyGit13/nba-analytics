@@ -16,8 +16,12 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', include('core.urls')),
+    # Add other app URLs below
+    path('search/', include('search.urls')), # Include search app URLs
+    path('visualize/', include('visualization.urls')), # Include visualization app URLs
 ]

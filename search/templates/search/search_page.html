@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search NBA Data{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded-lg p-8" x-data="{ resultCount: 0, maxCards: {{ max_cards }} }">
+    <h1 class="text-3xl font-bold text-blue-900 mb-6">Search Players, Teams, or Games</h1>
+
+    <form id="search-form" 
+          hx-get="{% url 'perform_search' %}" 
+          hx-target="#search-results-container"
+          hx-swap="innerHTML"
+          hx-indicator="#loading-spinner"
+          class="mb-8 grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+        
+        {% csrf_token %} {# Ensure CSRF token is included if using POST later #}
+        
+        <div class="md:col-span-2">
+            <label for="search_term" class="block text-sm font-medium text-gray-700 mb-1">Search Term:</label>
+            <input type="text" id="search_term" name="search_term" 
+                   placeholder="e.g., LeBron James, Lakers, 2023-01-15" 
+                   class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        
+        <div>
+            <label for="search_type" class="block text-sm font-medium text-gray-700 mb-1">Search Type:</label>
+            <select id="search_type" name="search_type" 
+                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <option value="player" selected>Player</option>
+                <option value="team">Team</option>
+                <option value="game">Game</option> {# Add Game if needed #}
+            </select>
+        </div>
+        
+        <div>
+            <label for="season" class="block text-sm font-medium text-gray-700 mb-1">Season (YYYY):</label>
+            <input type="number" id="season" name="season" placeholder="e.g., 2023" required 
+                   min="1946" max="{% now 'Y' %}" 
+                   class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <div class="md:col-span-4 flex justify-end">
+            <button type="submit"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+                Search
+            </button>
+            <span id="loading-spinner" class="htmx-indicator ml-4">
+                <svg class="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </span>
+        </div>
+    </form>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">Results (<span x-text="resultCount">0</span>/<span x-text="maxCards">5</span>)</h2>
+    <div id="search-results-container" 
+         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+         @htmx:after-swap="resultCount = document.querySelectorAll('#search-results-container > div').length">
+        {# Initial results loaded by the main view or HTMX responses will go here #}
+        {% include "partials/_search_results.html" with search_results=search_results %}
+    </div>
+
+</div>
+{% endblock %} 

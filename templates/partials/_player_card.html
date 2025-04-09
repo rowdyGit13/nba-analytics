@@ -1,0 +1,13 @@
+{# Partial template for Player Card #}
+<div class="bg-white rounded-lg shadow-md p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+    <img src="{{ player.photo }}" alt="{{ player.name }}" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-2 border-blue-200">
+    <h3 class="text-lg font-semibold text-center text-blue-800 mb-2">{{ player.name }}</h3>
+    <div class="text-sm text-gray-600 space-y-1">
+        <p><span class="font-medium">Position:</span> {{ player.position }}</p>
+        <p><span class="font-medium">Height:</span> {{ player.height }}</p>
+        <div class="flex items-center justify-center mt-2">
+            <img src="{{ player.team_logo }}" alt="{{ player.team_name }} Logo" class="w-6 h-6 mr-2">
+            <span class="font-medium">{{ player.team_name }}</span>
+        </div>
+    </div>
+</div> 

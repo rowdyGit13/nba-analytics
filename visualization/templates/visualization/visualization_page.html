@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Visualize Team Data{% endblock %}
+
+{% block extra_head %}
+    {# Include Chart.js #}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded-lg p-8"
+     x-data="chartComponent({{ initial_chart_data|safe }})"
+     x-init="initChart()"
+     hx-trigger="change from:#team_select, change from:#dataset_select"
+     hx-get="{% url 'get_chart_data_htmx' %}"
+     hx-target="#chart-data-store" {# Target a hidden element to store data #}
+     hx-swap="innerHTML"
+     hx-indicator="#loading-spinner">
+
+    <h1 class="text-3xl font-bold text-blue-900 mb-6">Visualize Team Performance Over Seasons</h1>
+
+    {# Hidden element to store JSON data from HTMX response #}
+    <div id="chart-data-store" x-ref="chartDataStore" class="hidden" 
+         @htmx:after-swap="updateChartData($event.target.textContent)"></div>
+
+    {# Selectors #}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 items-end">
+        <div>
+            <label for="team_select" class="block text-sm font-medium text-gray-700 mb-1">Select Team:</label>
+            <select id="team_select" name="team_id" x-model="selectedTeam" 
+                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <option value="">-- Select a Team --</option>
+                {% for team in teams %}
+                    <option value="{{ team.id }}">{{ team.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div>
+            <label for="dataset_select" class="block text-sm font-medium text-gray-700 mb-1">Select Dataset:</label>
+            <select id="dataset_select" name="dataset_key" x-model="selectedDataset" 
+                    class="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <option value="">-- Select a Dataset --</option>
+                {% for key, name in datasets %}
+                    <option value="{{ key }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="flex items-center">
+             <span id="loading-spinner" class="htmx-indicator ml-4">
+                <svg class="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    {# Chart Canvas #}
+    <div class="bg-gray-50 p-4 rounded-lg shadow-inner">
+        <canvas id="teamChart" x-ref="chartCanvas"></canvas>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function chartComponent(initialData) {
+        return {
+            chart: null,
+            chartData: initialData,
+            selectedTeam: '',
+            selectedDataset: '',
+            initChart() {
+                const ctx = this.$refs.chartCanvas.getContext('2d');
+                this.chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: this.chartData.labels,
+                        datasets: [{
+                            label: this.chartData.label,
+                            data: this.chartData.data,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)', // Blue bars
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: this.chartData.label
+                            }
+                        }
+                    }
+                });
+            },
+            updateChartData(jsonData) {
+                try {
+                    const newData = JSON.parse(jsonData);
+                    this.chartData = newData;
+                    this.chart.data.labels = this.chartData.labels;
+                    this.chart.data.datasets[0].data = this.chartData.data;
+                    this.chart.data.datasets[0].label = this.chartData.label;
+                    this.chart.options.plugins.title.text = this.chartData.label; // Update title
+                    this.chart.update();
+                } catch (e) {
+                    console.error("Error parsing or updating chart data:", e);
+                    // Optionally display an error message to the user
+                }
+            }
+        };
+    }
+</script>
+{% endblock %} 

@@ -1,0 +1,10 @@
+{# Partial template for Team Card #}
+<div class="bg-white rounded-lg shadow-md p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+    <img src="{{ team.logo }}" alt="{{ team.name }} Logo" class="w-24 h-24 mb-3 object-contain">
+    <h3 class="text-lg font-semibold text-center text-blue-800 mb-2">{{ team.name }}</h3>
+    <div class="text-sm text-gray-600 space-y-1 text-center">
+        <p><span class="font-medium">Record:</span> {{ team.record }}</p>
+        <p><span class="font-medium">PPG:</span> {{ team.ppg|floatformat:1 }}</p>
+        <p><span class="font-medium">Pts Allowed:</span> {{ team.papg|floatformat:1 }}</p>
+    </div>
+</div> 

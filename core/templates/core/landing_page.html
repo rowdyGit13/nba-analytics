@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome - NBA Analytics Dashboard{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded-lg p-8 text-center">
+    <h1 class="text-4xl font-bold text-blue-900 mb-4">Welcome to the NBA Analytics Dashboard</h1>
+    <p class="text-lg text-gray-700 mb-6">
+        Explore comprehensive NBA data, analyze player and team performance, and visualize trends across seasons.
+    </p>
+    <p class="text-md text-gray-600 mb-8">
+        Dive into the stats using our powerful search tools or generate insightful visualizations.
+    </p>
+    <div class="space-x-4">
+        <a href="{% url 'search_page' %}" 
+           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg">
+            Search Data
+        </a>
+        <a href="{% url 'visualization_page' %}" 
+           class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg">
+            Visualize Trends
+        </a>
+    </div>
+</div>
+{% endblock %} 

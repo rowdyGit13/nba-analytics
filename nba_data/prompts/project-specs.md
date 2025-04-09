@@ -28,11 +28,6 @@ Create a web application that scrapes NBA data, performs statistical analysis, a
    - Implement trend detection and performance predictions
 
 ## Phase 3: Visualization & Frontend
-
-   - Create Django views and templates for the frontend
-   - Implement responsive design with Tailwind CSS
-   - Build interactive components with typscript
-   - Use Matplotlib for generating charts
    
 Create three webpages:
 1. **Landing Page**

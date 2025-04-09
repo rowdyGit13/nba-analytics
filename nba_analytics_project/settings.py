@@ -68,6 +68,9 @@ INSTALLED_APPS = [
     # Local apps (we'll create these next)
     'nba_data',
     'dashboard',
+    'core',
+    'search',
+    'visualization',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +88,7 @@ ROOT_URLCONF = "nba_analytics_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

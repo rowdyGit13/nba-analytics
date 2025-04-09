@@ -1,0 +1,20 @@
+{# Partial template to render search results cards #}
+
+{% if not search_results and request.htmx %}
+    <p class="text-gray-600 italic col-span-full text-center">No results found for your query.</p>
+{% endif %}
+
+{% for result in search_results %}
+    {% if result.type == 'player' %}
+        {% include "partials/_player_card.html" with player=result %}
+    {% elif result.type == 'team' %}
+        {% include "partials/_team_card.html" with team=result %}
+    {% elif result.type == 'game' %}
+        {# {% include "partials/_game_card.html" with game=result %} #}
+        <p>Game card placeholder</p> {# Placeholder for game card #}
+    {% endif %}
+{% empty %}
+    {% if not request.htmx %} {# Show initial message only on full page load #}
+    <p class="text-gray-500 italic col-span-full text-center">Enter search criteria above to find players, teams, or games.</p>
+    {% endif %}
+{% endfor %} 
