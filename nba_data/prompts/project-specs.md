@@ -29,10 +29,8 @@ Create a web application that scrapes NBA data, performs statistical analysis, a
 
 ## Phase 3: Visualization & Frontend
 
-   - Create Django views and templates for the frontend
-   - Implement responsive design with Tailwind CSS
-   - Build interactive components with typscript
-   - Use Matplotlib for generating charts
+   - Implement responsive design with streamlit
+   - postgres database is used to store raw data and is processed into pandas dataframes on a weekly basis. Streamlit should utilize data in pandas dataframes for visualizations
    
 Create three webpages:
 1. **Landing Page**
@@ -43,13 +41,11 @@ Create three webpages:
    - enable user to search for a specific team, game, or player. Must specify a season.
    - when user selects search item, render a card that has relevant info:
       Player:
-      - player photo
       - height
       - position
       - team name
       - team logo
       Team:
-      - team logo
       - points per game
       - points allowed per game
       - record (in format: wins-losses)
