@@ -27,7 +27,7 @@ Create a web application that scrapes NBA data, performs statistical analysis, a
    - Develop algorithms for key basketball metrics
    - Implement trend detection and performance predictions
 
-## Phase 3: Visualization & Frontend
+## Phase 3: Visualization & Frontend using Streamlit
 
    - Implement responsive design with streamlit
    - postgres database is used to store raw data and is processed into pandas dataframes on a weekly basis. Streamlit should utilize data in pandas dataframes for visualizations
