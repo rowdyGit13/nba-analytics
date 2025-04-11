@@ -44,6 +44,26 @@ def get_supabase_client():
         logger.error(f"Error initializing Supabase client: {e}")
         return None
 
+def test_supabase_connection():
+    """
+    Test the connection to Supabase.
+    
+    Returns:
+        bool: True if connection is successful, False otherwise
+    """
+    supabase = get_supabase_client()
+    if not supabase:
+        return False
+    
+    try:
+        # Simple query to test connection
+        response = supabase.table("nba_data_team").select("id").limit(1).execute()
+        logger.info("Supabase connection test successful")
+        return True
+    except Exception as e:
+        logger.error(f"Supabase connection test failed: {e}")
+        return False
+
 def get_teams_from_supabase():
     """
     Get teams data directly from Supabase.
@@ -116,9 +136,8 @@ def get_games_from_supabase():
 # Example usage if this script is run directly
 if __name__ == "__main__":
     print("Testing Supabase connection...")
-    supabase = get_supabase_client()
     
-    if supabase:
+    if test_supabase_connection():
         print("✅ Supabase connection successful!")
         
         # Test fetching teams

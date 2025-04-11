@@ -1,0 +1,46 @@
+id,team_id,abbreviation,city,conference,division,full_name,name
+1,1,ATL,Atlanta,East,Southeast,Atlanta Hawks,Hawks
+2,2,BOS,Boston,East,Atlantic,Boston Celtics,Celtics
+3,3,BKN,Brooklyn,East,Atlantic,Brooklyn Nets,Nets
+4,4,CHA,Charlotte,East,Southeast,Charlotte Hornets,Hornets
+5,5,CHI,Chicago,East,Central,Chicago Bulls,Bulls
+6,6,CLE,Cleveland,East,Central,Cleveland Cavaliers,Cavaliers
+7,7,DAL,Dallas,West,Southwest,Dallas Mavericks,Mavericks
+8,8,DEN,Denver,West,Northwest,Denver Nuggets,Nuggets
+9,9,DET,Detroit,East,Central,Detroit Pistons,Pistons
+10,10,GSW,Golden State,West,Pacific,Golden State Warriors,Warriors
+11,11,HOU,Houston,West,Southwest,Houston Rockets,Rockets
+12,12,IND,Indiana,East,Central,Indiana Pacers,Pacers
+13,13,LAC,LA,West,Pacific,LA Clippers,Clippers
+14,14,LAL,Los Angeles,West,Pacific,Los Angeles Lakers,Lakers
+15,15,MEM,Memphis,West,Southwest,Memphis Grizzlies,Grizzlies
+16,16,MIA,Miami,East,Southeast,Miami Heat,Heat
+17,17,MIL,Milwaukee,East,Central,Milwaukee Bucks,Bucks
+18,18,MIN,Minnesota,West,Northwest,Minnesota Timberwolves,Timberwolves
+19,19,NOP,New Orleans,West,Southwest,New Orleans Pelicans,Pelicans
+20,20,NYK,New York,East,Atlantic,New York Knicks,Knicks
+21,21,OKC,Oklahoma City,West,Northwest,Oklahoma City Thunder,Thunder
+22,22,ORL,Orlando,East,Southeast,Orlando Magic,Magic
+23,23,PHI,Philadelphia,East,Atlantic,Philadelphia 76ers,76ers
+24,24,PHX,Phoenix,West,Pacific,Phoenix Suns,Suns
+25,25,POR,Portland,West,Northwest,Portland Trail Blazers,Trail Blazers
+26,26,SAC,Sacramento,West,Pacific,Sacramento Kings,Kings
+27,27,SAS,San Antonio,West,Southwest,San Antonio Spurs,Spurs
+28,28,TOR,Toronto,East,Atlantic,Toronto Raptors,Raptors
+29,29,UTA,Utah,West,Northwest,Utah Jazz,Jazz
+30,30,WAS,Washington,East,Southeast,Washington Wizards,Wizards
+31,37,CHS,,    ,,Chicago Stags,Chicago Stags
+32,38,BOM,,    ,,St. Louis Bombers,St. Louis Bombers
+33,39,CLR,,    ,,Cleveland Rebels,Cleveland Rebels
+34,40,DEF,,    ,,Detroit Falcons,Detroit Falcons
+35,41,HUS,,    ,,Toronto Huskies,Toronto Huskies
+36,42,WAS,,    ,,Washington Capitols,Washington Capitols
+37,43,PRO,,    ,,Providence Steamrollers,Providence Steamrollers
+38,44,PIT,,    ,,Pittsburgh Ironmen,Pittsburgh Ironmen
+39,45,BAL,,    ,,Baltimore Bullets,Baltimore Bullets
+40,46,JET,,    ,,Indianapolis Jets,Indianapolis Jets
+41,47,AND,,    ,,Anderson Packers,Anderson Packers
+42,48,WAT,,    ,,Waterloo Hawks,Waterloo Hawks
+43,49,INO,,    ,,Indianapolis Olympians,Indianapolis Olympians
+44,50,DN,,    ,,Denver Nuggets,Denver Nuggets
+45,51,SHE,,    ,,Sheboygan Redskins,Sheboygan Redskins
