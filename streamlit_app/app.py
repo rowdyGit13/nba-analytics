@@ -3,16 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import sys
-import django
+from pathlib import Path
 
-# Setup Django
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nba_analytics_project.settings')
-django.setup()
+# Add the project root to the Python path
+root_path = Path(__file__).parent.parent
+sys.path.append(str(root_path))
 
-# Import data utilities
-from nba_data.analytics.dataframes import get_teams_dataframe, get_players_dataframe, get_games_dataframe
-from nba_data.analytics.stats import calculate_team_performance_metrics
+# Use our custom data loader with fallback capability
+from streamlit_app.data_loader import get_teams_dataframe, get_players_dataframe, get_games_dataframe
 
 # App setup
 st.set_page_config(

@@ -5,6 +5,7 @@ import logging
 from datetime import datetime
 from django.utils.timezone import make_aware
 import time
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -12,17 +13,69 @@ class Command(BaseCommand):
     help = 'Import NBA games from the API'
 
     def add_arguments(self, parser):
-        parser.add_argument('--season', type=int, required=True, 
-                            help='Season to import (e.g., 2023 for 2023-2024 season)')
+        parser.add_argument('--seasons', type=str, nargs='+', required=True, 
+                            help='Seasons to import. Use individual years (e.g., 2022 2023) or ranges (e.g., 2022-2024)')
         parser.add_argument('--max-pages', type=int, default=100, 
-                            help='Maximum number of pages to import')
+                            help='Maximum number of pages to import per season')
         parser.add_argument('--start-cursor', type=int, default=None,
-                            help='API cursor to start fetching from (for resuming imports)')
+                            help='API cursor to start fetching from (for resuming imports - only applies to first season)')
+    
+    def parse_seasons(self, season_args):
+        """Parse season arguments which can be individual years or ranges."""
+        seasons = []
+        
+        for arg in season_args:
+            # Check if it's a range (e.g., 2022-2024)
+            range_match = re.match(r'^(\d{4})-(\d{4})$', arg)
+            if range_match:
+                start_year = int(range_match.group(1))
+                end_year = int(range_match.group(2))
+                if start_year <= end_year:
+                    seasons.extend(range(start_year, end_year + 1))
+                else:
+                    self.stdout.write(self.style.WARNING(f"Invalid range: {arg}. Start year must be <= end year."))
+            else:
+                # Try parsing as a single year
+                try:
+                    seasons.append(int(arg))
+                except ValueError:
+                    self.stdout.write(self.style.WARNING(f"Skipping invalid season format: {arg}"))
+        
+        # Remove duplicates and sort
+        seasons = sorted(list(set(seasons)))
+        
+        if not seasons:
+            self.stdout.write(self.style.ERROR("No valid seasons specified."))
+        
+        return seasons
 
     def handle(self, *args, **options):
-        season = options['season']
+        season_args = options['seasons']
         max_pages = options['max_pages']
         start_cursor = options['start_cursor']
+        
+        # Parse seasons from arguments
+        seasons = self.parse_seasons(season_args)
+        
+        if not seasons:
+            self.stdout.write(self.style.ERROR("No valid seasons to import. Exiting."))
+            return
+        
+        self.stdout.write(f'Importing NBA games for seasons: {", ".join(str(s) for s in seasons)}')
+        total_games_processed = 0
+        
+        for season in seasons:
+            self.stdout.write(self.style.SUCCESS(f'\nProcessing season: {season}-{season+1}'))
+            games_processed = self.import_season(season, max_pages, start_cursor)
+            total_games_processed += games_processed
+            
+            # Only use start_cursor for the first season
+            start_cursor = None
+            
+        self.stdout.write(self.style.SUCCESS(f'\nAll imports completed. Total games processed: {total_games_processed}'))
+    
+    def import_season(self, season, max_pages, start_cursor):
+        """Import games for a specific season"""
         self.stdout.write(f'Importing NBA games for {season}-{season+1} season (up to {max_pages} pages)...')
         if start_cursor:
             self.stdout.write(f'Starting from cursor: {start_cursor}')
@@ -128,21 +181,23 @@ class Command(BaseCommand):
                         self.stdout.write(self.style.ERROR(
                             f"Max retries reached for rate limit on page {page_count}. Stopping."
                         ))
-                        self.stdout.write(f"To resume later, use: --start-cursor {next_cursor}")
+                        self.stdout.write(f"To resume later, use: --start-cursor {next_cursor} --seasons {season}")
                         logger.error(f'Rate limit max retries reached: {str(e)}', exc_info=True)
                         break
                 else:
                     self.stdout.write(self.style.ERROR(f'Error importing games on page {page_count}: {str(e)}'))
                     self.stdout.write(f"Error occurred. Last successful cursor was: {next_cursor}")
-                    self.stdout.write(f"Consider resuming with: --start-cursor {next_cursor}")
+                    self.stdout.write(f"Consider resuming with: --start-cursor {next_cursor} --seasons {season}")
                     logger.error(f'Error importing games: {str(e)}', exc_info=True)
                     break
 
         if page_count >= max_pages:
-            self.stdout.write(self.style.WARNING(f'Reached max pages ({max_pages}).'))
+            self.stdout.write(self.style.WARNING(f'Reached max pages ({max_pages}) for season {season}-{season+1}.'))
             if next_cursor:
-                self.stdout.write(f"To continue fetching, run again with: --start-cursor {next_cursor}")
+                self.stdout.write(f"To continue fetching this season, run again with: --start-cursor {next_cursor} --seasons {season}")
 
-        self.stdout.write(self.style.SUCCESS(f'Import command finished. Processed {games_processed_in_session} games in this run.'))
+        self.stdout.write(self.style.SUCCESS(f'Finished season {season}-{season+1}. Processed {games_processed_in_session} games.'))
         if next_cursor:
             self.stdout.write(f"Last API cursor processed was: {next_cursor}")
+            
+        return games_processed_in_session

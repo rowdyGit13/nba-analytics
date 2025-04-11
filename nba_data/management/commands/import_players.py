@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand
 from nba_data.models import Team, Player
 from nba_data.utils.api_client import api_client
 import logging
+from django.db import transaction
 
 logger = logging.getLogger(__name__)
 
@@ -26,11 +27,11 @@ class Command(BaseCommand):
     help = 'Import NBA players from the API'
     
     def add_arguments(self, parser):
-        parser.add_argument('--max-pages', type=int, default=10, 
+        parser.add_argument('--max-pages', type=int, default=20, 
                             help='Maximum number of pages to import')
 
     def handle(self, *args, **options):
-        max_pages = options.get('max_pages', 10)
+        max_pages = options.get('max_pages', 20)
         self.stdout.write(f'Importing NBA players (up to {max_pages} pages)...')
         
         try:
