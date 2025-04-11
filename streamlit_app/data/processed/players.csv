@@ -1,0 +1,501 @@
+player_id,first_name,last_name,position,height_feet,height_inches,height_total_inches,weight_pounds,jersey_number,college,country,draft_year,draft_round,draft_number,team_id,team_abbreviation,team_name,team_conference,team_division,full_name,position_standard
+4,Bam,Adebayo,C-F,6.0,9.0,81.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Bam Adebayo,F-C
+5,DeVaughn,Akoon-Purcell,G-F,6.0,5.0,77.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,DeVaughn Akoon-Purcell,G-F
+6,LaMarcus,Aldridge,F,6.0,11.0,83.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,LaMarcus Aldridge,F
+7,Rawle,Alkins,G,6.0,5.0,77.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Rawle Alkins,G
+8,Grayson,Allen,G,6.0,4.0,76.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Grayson Allen,G
+9,Jarrett,Allen,C,6.0,9.0,81.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Jarrett Allen,C
+10,Al-Farouq,Aminu,F,6.0,8.0,80.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Al-Farouq Aminu,F
+11,Justin,Anderson,G-F,6.0,5.0,77.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Justin Anderson,G-F
+12,Kyle,Anderson,F,6.0,9.0,81.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Kyle Anderson,F
+13,Ryan,Anderson,F,6.0,10.0,82.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Ryan Anderson,F
+14,Ike,Anigbogu,C,6.0,10.0,82.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Ike Anigbogu,C
+15,Giannis,Antetokounmpo,F,6.0,11.0,83.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Giannis Antetokounmpo,F
+16,Kostas,Antetokounmpo,F,6.0,10.0,82.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Kostas Antetokounmpo,F
+17,Carmelo,Anthony,F,6.0,7.0,79.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Carmelo Anthony,F
+18,OG,Anunoby,F,6.0,7.0,79.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,OG Anunoby,F
+19,Ryan,Arcidiacono,G,6.0,3.0,75.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Ryan Arcidiacono,G
+20,Trevor,Ariza,F,6.0,8.0,80.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Trevor Ariza,F
+21,D.J.,Augustin,G,5.0,11.0,71.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,D.J. Augustin,G
+22,Deandre,Ayton,C,7.0,0.0,84.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Deandre Ayton,C
+24,Marvin,Bagley III,F,6.0,10.0,82.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Marvin Bagley III,F
+25,Ron,Baker,G,6.0,4.0,76.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Ron Baker,G
+26,Wade,Baldwin IV,G,6.0,4.0,76.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Wade Baldwin IV,G
+27,Lonzo,Ball,G,6.0,6.0,78.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Lonzo Ball,G
+28,Mo,Bamba,C,7.0,0.0,84.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Mo Bamba,C
+29,J.J.,Barea,G,5.0,10.0,70.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,J.J. Barea,G
+30,Harrison,Barnes,F,6.0,8.0,80.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Harrison Barnes,F
+31,Will,Barton,G,6.0,5.0,77.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Will Barton,G
+32,Keita,Bates-Diop,F,6.0,8.0,80.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Keita Bates-Diop,F
+33,Nicolas,Batum,F-G,6.0,8.0,80.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Nicolas Batum,G-F
+34,Jerryd,Bayless,G,6.0,3.0,75.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Jerryd Bayless,G
+35,Aron,Baynes,C-F,6.0,10.0,82.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Aron Baynes,F-C
+36,Kent,Bazemore,G,6.0,4.0,76.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Kent Bazemore,G
+37,Bradley,Beal,G,6.0,4.0,76.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Bradley Beal,G
+38,Malik,Beasley,G,6.0,4.0,76.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Malik Beasley,G
+39,Michael,Beasley,F,6.0,9.0,81.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Michael Beasley,F
+40,Marco,Belinelli,G-F,6.0,5.0,77.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Marco Belinelli,G-F
+41,Jordan,Bell,F,6.0,8.0,80.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Jordan Bell,F
+42,DeAndre',Bembry,F,6.0,5.0,77.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,DeAndre' Bembry,F
+43,Dragan,Bender,F,7.0,1.0,85.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Dragan Bender,F
+44,Davis,Bertans,F,6.0,10.0,82.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Davis Bertans,F
+46,Khem,Birch,C,6.0,8.0,80.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Khem Birch,C
+47,Jabari,Bird,G,6.0,6.0,78.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Jabari Bird,G
+48,Bismack,Biyombo,C,6.0,8.0,80.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Bismack Biyombo,C
+49,Nemanja,Bjelica,F,6.0,9.0,81.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Nemanja Bjelica,F
+50,Antonio,Blakeney,G,6.0,4.0,76.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Antonio Blakeney,G
+51,Eric,Bledsoe,G,6.0,1.0,73.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Eric Bledsoe,G
+52,Trevon,Bluiett,G-F,6.0,6.0,78.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Trevon Bluiett,G-F
+53,Bogdan,Bogdanovic,G,6.0,5.0,77.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Bogdan Bogdanovic,G
+54,Bojan,Bogdanovic,F,6.0,7.0,79.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Bojan Bogdanovic,F
+55,Jonah,Bolden,F,6.0,10.0,82.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Jonah Bolden,F
+56,Isaac,Bonga,G,6.0,8.0,80.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Isaac Bonga,G
+57,Devin,Booker,G,6.0,6.0,78.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Devin Booker,G
+58,Chris,Boucher,F,6.0,9.0,81.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Chris Boucher,F
+59,Avery,Bradley,G,6.0,3.0,75.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Avery Bradley,G
+60,Tony,Bradley,C,6.0,11.0,83.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Tony Bradley,C
+61,Mikal,Bridges,F,6.0,6.0,78.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Mikal Bridges,F
+62,Miles,Bridges,F,6.0,7.0,79.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Miles Bridges,F
+63,Isaiah,Briscoe,G,6.0,3.0,75.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Isaiah Briscoe,G
+64,Ryan,Broekhoff,G-F,6.0,6.0,78.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Ryan Broekhoff,G-F
+65,Malcolm,Brogdon,G,6.0,4.0,76.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Malcolm Brogdon,G
+66,Dillon,Brooks,G-F,6.0,6.0,78.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Dillon Brooks,G-F
+67,MarShon,Brooks,G,6.0,5.0,77.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,MarShon Brooks,G
+69,Bruce,Brown,G,6.0,4.0,76.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Bruce Brown,G
+70,Jaylen,Brown,G,6.0,6.0,78.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Jaylen Brown,G
+71,Lorenzo,Brown,G,6.0,5.0,77.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Lorenzo Brown,G
+72,Sterling,Brown,G,6.0,5.0,77.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Sterling Brown,G
+73,Jalen,Brunson,G,6.0,2.0,74.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Jalen Brunson,G
+74,Thomas,Bryant,C,6.0,10.0,82.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Thomas Bryant,C
+75,Reggie,Bullock,G-F,6.0,6.0,78.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Reggie Bullock,G-F
+76,Trey,Burke,G,6.0,0.0,72.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Trey Burke,G
+77,Alec,Burks,G,6.0,5.0,77.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Alec Burks,G
+78,Deonte,Burton,G,6.0,4.0,76.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Deonte Burton,G
+79,Jimmy,Butler,G-F,6.0,7.0,79.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Jimmy Butler,G-F
+80,Jose,Calderon,G,6.0,3.0,75.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Jose Calderon,G
+81,Kentavious,Caldwell-Pope,G,6.0,5.0,77.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Kentavious Caldwell-Pope,G
+82,Isaiah,Canaan,G,6.0,0.0,72.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Isaiah Canaan,G
+83,Clint,Capela,C,6.0,10.0,82.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Clint Capela,C
+84,DeMarre,Carroll,F,6.0,6.0,78.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,DeMarre Carroll,F
+85,Wendell,Carter Jr.,F,6.0,10.0,82.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Wendell Carter Jr.,F
+86,Michael,Carter-Williams,G,6.0,5.0,77.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Michael Carter-Williams,G
+87,Jevon,Carter,G,6.0,1.0,73.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Jevon Carter,G
+88,Vince,Carter,F-G,6.0,6.0,78.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Vince Carter,G-F
+89,Alex,Caruso,G,6.0,5.0,77.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Alex Caruso,G
+90,Omri,Casspi,F,6.0,9.0,81.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Omri Casspi,F
+92,Troy,Caupain,G,6.0,4.0,76.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Troy Caupain,G
+93,Tyler,Cavanaugh,F,6.0,9.0,81.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Tyler Cavanaugh,F
+2,Jaylen,Adams,G,6.0,0.0,72.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Jaylen Adams,G
+96,Joe,Chealey,G,6.0,3.0,75.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Joe Chealey,G
+97,Marquese,Chriss,F,6.0,9.0,81.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Marquese Chriss,F
+98,Gary,Clark,F,6.0,6.0,78.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Gary Clark,F
+99,Ian,Clark,G,6.0,3.0,75.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Ian Clark,G
+100,Jordan,Clarkson,G,6.0,3.0,75.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Jordan Clarkson,G
+101,John,Collins,F-C,6.0,9.0,81.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,John Collins,F-C
+102,Zach,Collins,F-C,6.0,11.0,83.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Zach Collins,F-C
+103,Darren,Collison,G,6.0,0.0,72.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Darren Collison,G
+104,Mike,Conley,G,6.0,0.0,72.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Mike Conley,G
+105,Pat,Connaughton,G,6.0,5.0,77.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Pat Connaughton,G
+106,Quinn,Cook,G,6.0,1.0,73.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Quinn Cook,G
+107,DeMarcus,Cousins,C,6.0,10.0,82.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,DeMarcus Cousins,C
+108,Robert,Covington,F,6.0,7.0,79.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Robert Covington,F
+109,Allen,Crabbe,G-F,6.0,6.0,78.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Allen Crabbe,G-F
+110,Torrey,Craig,F,6.0,5.0,77.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Torrey Craig,F
+111,Jamal,Crawford,G,6.0,5.0,77.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Jamal Crawford,G
+112,Jae,Crowder,F,6.0,6.0,78.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Jae Crowder,F
+113,Dante,Cunningham,F,6.0,8.0,80.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Dante Cunningham,F
+114,Seth,Curry,G,6.0,1.0,73.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Seth Curry,G
+115,Stephen,Curry,G,6.0,2.0,74.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Stephen Curry,G
+116,Troy,Daniels,G,6.0,4.0,76.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Troy Daniels,G
+118,Ed,Davis,C,6.0,9.0,81.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Ed Davis,C
+119,Tyler,Davis,C,6.0,10.0,82.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Tyler Davis,C
+120,Dewayne,Dedmon,C,6.0,10.0,82.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Dewayne Dedmon,C
+121,Sam,Dekker,F,6.0,9.0,81.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Sam Dekker,F
+122,Angel,Delgado,C,6.0,10.0,82.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Angel Delgado,C
+123,Matthew,Dellavedova,G,6.0,3.0,75.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Matthew Dellavedova,G
+124,Luol,Deng,F,6.0,9.0,81.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Luol Deng,F
+125,DeMar,DeRozan,G,6.0,6.0,78.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,DeMar DeRozan,G
+126,Marcus,Derrickson,F,6.0,7.0,79.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Marcus Derrickson,F
+127,Cheick,Diallo,F,6.0,8.0,80.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Cheick Diallo,F
+128,Hamidou,Diallo,G,6.0,5.0,77.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Hamidou Diallo,G
+129,Gorgui,Dieng,C,6.0,10.0,82.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Gorgui Dieng,C
+130,Spencer,Dinwiddie,G,6.0,5.0,77.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Spencer Dinwiddie,G
+131,Donte,DiVincenzo,G,6.0,4.0,76.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Donte DiVincenzo,G
+132,Luka,Doncic,F-G,6.0,6.0,78.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Luka Doncic,G-F
+133,Tyler,Dorsey,G,6.0,5.0,77.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Tyler Dorsey,G
+134,Damyean,Dotson,G,6.0,5.0,77.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Damyean Dotson,G
+135,PJ,Dozier,G-F,6.0,6.0,78.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,PJ Dozier,G-F
+136,Goran,Dragic,G,6.0,4.0,76.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Goran Dragic,G
+137,Andre,Drummond,C,6.0,11.0,83.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Andre Drummond,C
+138,Jared,Dudley,F,6.0,6.0,78.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Jared Dudley,F
+139,Kris,Dunn,G,6.0,3.0,75.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Kris Dunn,G
+140,Kevin,Durant,F,6.0,11.0,83.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Kevin Durant,F
+141,Trevon,Duval,G,6.0,2.0,74.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Trevon Duval,G
+143,Henry,Ellenson,F,6.0,11.0,83.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Henry Ellenson,F
+144,Wayne,Ellington,G,6.0,4.0,76.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Wayne Ellington,G
+145,Joel,Embiid,F-C,7.0,0.0,84.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Joel Embiid,F-C
+146,James,Ennis III,F,6.0,6.0,78.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,James Ennis III,F
+147,Drew,Eubanks,F,6.0,10.0,82.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Drew Eubanks,F
+148,Jacob,Evans,G,6.0,4.0,76.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Jacob Evans,G
+149,Keenan,Evans,G,,,,,,,,,,,9,DET,Detroit Pistons,East,Central,Keenan Evans,G
+150,Tyreke,Evans,G,6.0,6.0,78.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Tyreke Evans,G
+151,Dante,Exum,G,6.0,5.0,77.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Dante Exum,G
+152,Kenneth,Faried,F-C,6.0,8.0,80.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Kenneth Faried,F-C
+153,Derrick,Favors,F-C,6.0,9.0,81.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Derrick Favors,F-C
+154,Cristiano,Felicio,F-C,6.0,11.0,83.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Cristiano Felicio,F-C
+155,Raymond,Felton,G,6.0,1.0,73.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Raymond Felton,G
+156,Terrance,Ferguson,G,6.0,6.0,78.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Terrance Ferguson,G
+157,Yogi,Ferrell,G,6.0,0.0,72.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Yogi Ferrell,G
+158,Dorian,Finney-Smith,F,6.0,7.0,79.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Dorian Finney-Smith,F
+159,Bryn,Forbes,G,6.0,2.0,74.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Bryn Forbes,G
+160,Evan,Fournier,G-F,6.0,6.0,78.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Evan Fournier,G-F
+161,De'Aaron,Fox,G,6.0,3.0,75.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,De'Aaron Fox,G
+162,Melvin,Frazier Jr.,G-F,6.0,5.0,77.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Melvin Frazier Jr.,G-F
+163,Tim,Frazier,G,6.0,0.0,72.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Tim Frazier,G
+165,Markelle,Fultz,G,6.0,4.0,76.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Markelle Fultz,G
+166,Wenyen,Gabriel,F,6.0,9.0,81.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Wenyen Gabriel,F
+167,Danilo,Gallinari,F,6.0,10.0,82.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Danilo Gallinari,F
+168,Langston,Galloway,G,6.0,1.0,73.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Langston Galloway,G
+169,Marc,Gasol,C,6.0,11.0,83.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Marc Gasol,C
+170,Pau,Gasol,C-F,7.0,0.0,84.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Pau Gasol,F-C
+171,Rudy,Gay,F,6.0,8.0,80.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Rudy Gay,F
+172,Paul,George,F,6.0,8.0,80.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Paul George,F
+173,Taj,Gibson,F,6.0,9.0,81.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Taj Gibson,F
+174,Harry,Giles III,F-C,6.0,10.0,82.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Harry Giles III,F-C
+175,Shai,Gilgeous-Alexander,G,6.0,6.0,78.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Shai Gilgeous-Alexander,G
+176,Rudy,Gobert,C,7.0,1.0,85.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Rudy Gobert,C
+177,Aaron,Gordon,F,6.0,8.0,80.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Aaron Gordon,F
+178,Eric,Gordon,G,6.0,3.0,75.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Eric Gordon,G
+179,Marcin,Gortat,C,6.0,11.0,83.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Marcin Gortat,C
+180,Devonte',Graham,G,6.0,1.0,73.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Devonte' Graham,G
+181,Treveon,Graham,F,6.0,5.0,77.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Treveon Graham,F
+182,Jerami,Grant,F,6.0,7.0,79.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Jerami Grant,F
+183,Jerian,Grant,G,6.0,4.0,76.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Jerian Grant,G
+184,Danny,Green,G-F,6.0,6.0,78.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Danny Green,G-F
+185,Draymond,Green,F,6.0,6.0,78.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Draymond Green,F
+190,Daniel,Hamilton,G-F,6.0,7.0,79.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Daniel Hamilton,G-F
+191,Tim,Hardaway Jr.,G,6.0,5.0,77.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Tim Hardaway Jr.,G
+192,James,Harden,G,6.0,5.0,77.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,James Harden,G
+193,Maurice,Harkless,F,6.0,7.0,79.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Maurice Harkless,F
+197,Joe,Harris,F-G,6.0,6.0,78.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Joe Harris,G-F
+198,Andrew,Harrison,G,6.0,6.0,78.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Andrew Harrison,G
+199,Shaquille,Harrison,G,6.0,4.0,76.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Shaquille Harrison,G
+200,Tobias,Harris,F,6.0,8.0,80.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Tobias Harris,F
+201,Isaiah,Hartenstein,F-C,7.0,0.0,84.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Isaiah Hartenstein,F-C
+202,Josh,Hart,G,6.0,4.0,76.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Josh Hart,G
+1,Alex,Abrines,G,6.0,6.0,78.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Alex Abrines,G
+3,Steven,Adams,C,6.0,11.0,83.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Steven Adams,C
+23,Dwayne,Bacon,G-F,6.0,6.0,78.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Dwayne Bacon,G-F
+45,Patrick,Beverley,G,6.0,2.0,74.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Patrick Beverley,G
+68,Troy,Brown Jr.,F,6.0,7.0,79.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Troy Brown Jr.,F
+91,Willie,Cauley-Stein,C,7.0,0.0,84.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Willie Cauley-Stein,C
+94,Tyson,Chandler,C,7.0,0.0,84.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Tyson Chandler,C
+95,Wilson,Chandler,F,6.0,8.0,80.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Wilson Chandler,F
+117,Anthony,Davis,F-C,6.0,10.0,82.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Anthony Davis,F-C
+142,Vincent,Edwards,F,6.0,8.0,80.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Vincent Edwards,F
+164,Channing,Frye,F-C,7.0,0.0,84.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Channing Frye,F-C
+186,Gerald,Green,G-F,6.0,7.0,79.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Gerald Green,G-F
+187,JaMychal,Green,F,6.0,9.0,81.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,JaMychal Green,F
+188,Jeff,Green,F,6.0,8.0,80.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Jeff Green,F
+189,Blake,Griffin,F,6.0,9.0,81.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Blake Griffin,F
+194,Montrezl,Harrell,F-C,6.0,7.0,79.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Montrezl Harrell,F-C
+195,Devin,Harris,G,6.0,3.0,75.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Devin Harris,G
+196,Gary,Harris,G,6.0,4.0,76.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Gary Harris,G
+203,Udonis,Haslem,F,6.0,7.0,79.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Udonis Haslem,F
+204,Gordon,Hayward,F,6.0,7.0,79.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Gordon Hayward,F
+205,John,Henson,F,6.0,9.0,81.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,John Henson,F
+206,Juancho,Hernangomez,F,6.0,9.0,81.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Juancho Hernangomez,F
+207,Willy,Hernangomez,C,6.0,11.0,83.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Willy Hernangomez,C
+208,Mario,Hezonja,F,6.0,8.0,80.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Mario Hezonja,F
+209,Isaiah,Hicks,F,6.0,9.0,81.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Isaiah Hicks,F
+210,Buddy,Hield,G,6.0,4.0,76.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Buddy Hield,G
+211,George,Hill,G,6.0,4.0,76.0,,,,,,,,12,IND,Indiana Pacers,East,Central,George Hill,G
+212,Solomon,Hill,F,6.0,6.0,78.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Solomon Hill,F
+213,Aaron,Holiday,G,6.0,0.0,72.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Aaron Holiday,G
+214,Jrue,Holiday,G,6.0,4.0,76.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Jrue Holiday,G
+215,Justin,Holiday,F-G,6.0,6.0,78.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Justin Holiday,G-F
+216,Rondae,Hollis-Jefferson,F,6.0,6.0,78.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,Rondae Hollis-Jefferson,F
+217,Richaun,Holmes,F-C,6.0,9.0,81.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Richaun Holmes,F-C
+218,Rodney,Hood,G,6.0,8.0,80.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Rodney Hood,G
+219,Al,Horford,C-F,6.0,9.0,81.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Al Horford,F-C
+220,Dwight,Howard,C,6.0,10.0,82.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Dwight Howard,C
+221,Kevin,Huerter,G,6.0,7.0,79.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Kevin Huerter,G
+222,Chandler,Hutchison,F,6.0,6.0,78.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Chandler Hutchison,F
+223,Serge,Ibaka,F-C,6.0,10.0,82.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Serge Ibaka,F-C
+224,Andre,Iguodala,G-F,6.0,6.0,78.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Andre Iguodala,G-F
+225,Ersan,Ilyasova,F,6.0,9.0,81.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Ersan Ilyasova,F
+226,Joe,Ingles,F,6.0,8.0,80.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Joe Ingles,F
+227,Brandon,Ingram,F,6.0,8.0,80.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Brandon Ingram,F
+228,Kyrie,Irving,G,6.0,2.0,74.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Kyrie Irving,G
+229,Jonathan,Isaac,F,6.0,10.0,82.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Jonathan Isaac,F
+230,Wes,Iwundu,F,6.0,6.0,78.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Wes Iwundu,F
+231,Jaren,Jackson Jr.,F-C,6.0,10.0,82.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Jaren Jackson Jr.,F-C
+232,Demetrius,Jackson,G,6.0,1.0,73.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Demetrius Jackson,G
+233,Frank,Jackson,G,6.0,3.0,75.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Frank Jackson,G
+234,Josh,Jackson,F,6.0,8.0,80.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Josh Jackson,F
+235,Justin,Jackson,F,6.0,8.0,80.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Justin Jackson,F
+236,Reggie,Jackson,G,6.0,2.0,74.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Reggie Jackson,G
+237,LeBron,James,F,6.0,9.0,81.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,LeBron James,F
+238,Amile,Jefferson,F,6.0,9.0,81.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Amile Jefferson,F
+239,Jonas,Jerebko,F,6.0,10.0,82.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Jonas Jerebko,F
+240,Alize,Johnson,F,6.0,7.0,79.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Alize Johnson,F
+241,Amir,Johnson,C-F,6.0,9.0,81.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Amir Johnson,F-C
+242,James,Johnson,F,6.0,7.0,79.0,,,,,,,,12,IND,Indiana Pacers,East,Central,James Johnson,F
+243,Stanley,Johnson,F,6.0,6.0,78.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Stanley Johnson,F
+244,Tyler,Johnson,G,6.0,3.0,75.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Tyler Johnson,G
+245,Wesley,Johnson,F-G,6.0,7.0,79.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Wesley Johnson,G-F
+246,Nikola,Jokic,C,6.0,11.0,83.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Nikola Jokic,C
+247,Derrick,Jones Jr.,F-G,6.0,6.0,78.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Derrick Jones Jr.,G-F
+248,Damian,Jones,C,6.0,10.0,82.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Damian Jones,C
+249,Tyus,Jones,G,6.0,1.0,73.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Tyus Jones,G
+250,DeAndre,Jordan,C,6.0,11.0,83.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,DeAndre Jordan,C
+251,Cory,Joseph,G,6.0,2.0,74.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Cory Joseph,G
+252,Frank,Kaminsky,F-C,7.0,0.0,84.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Frank Kaminsky,F-C
+253,Enes,Kanter,C,6.0,10.0,82.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Enes Kanter,C
+254,Luke,Kennard,G,6.0,5.0,77.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Luke Kennard,G
+255,Michael,Kidd-Gilchrist,F,6.0,6.0,78.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Michael Kidd-Gilchrist,F
+256,George,King,F,6.0,6.0,78.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,George King,F
+257,Maxi,Kleber,F,6.0,10.0,82.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Maxi Kleber,F
+258,Brandon,Knight,G,6.0,2.0,74.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Brandon Knight,G
+259,Kevin,Knox,F,6.0,8.0,80.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Kevin Knox,F
+260,Furkan,Korkmaz,G-F,6.0,7.0,79.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Furkan Korkmaz,G-F
+261,Luke,Kornet,F-C,7.0,1.0,85.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Luke Kornet,F-C
+262,Kyle,Korver,G-F,6.0,7.0,79.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Kyle Korver,G-F
+263,Kosta,Koufos,C,7.0,0.0,84.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Kosta Koufos,C
+264,Rodions,Kurucs,F,6.0,9.0,81.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,Rodions Kurucs,F
+265,Kyle,Kuzma,F,6.0,9.0,81.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Kyle Kuzma,F
+266,Skal,Labissiere,F,6.0,10.0,82.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Skal Labissiere,F
+267,Jeremy,Lamb,G,6.0,5.0,77.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Jeremy Lamb,G
+268,Zach,LaVine,G,6.0,5.0,77.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Zach LaVine,G
+269,Jake,Layman,F,6.0,8.0,80.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Jake Layman,F
+270,TJ,Leaf,F,6.0,10.0,82.0,,,,,,,,12,IND,Indiana Pacers,East,Central,TJ Leaf,F
+271,Courtney,Lee,G,6.0,5.0,77.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Courtney Lee,G
+272,Damion,Lee,G,6.0,6.0,78.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Damion Lee,G
+273,Alex,Len,C,7.0,0.0,84.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Alex Len,C
+274,Kawhi,Leonard,F,6.0,7.0,79.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Kawhi Leonard,F
+275,Meyers,Leonard,F-C,7.0,0.0,84.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Meyers Leonard,F-C
+276,Jon,Leuer,F,6.0,10.0,82.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Jon Leuer,F
+277,Caris,LeVert,G,6.0,6.0,78.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Caris LeVert,G
+278,Damian,Lillard,G,6.0,2.0,74.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Damian Lillard,G
+279,Jeremy,Lin,G,6.0,3.0,75.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Jeremy Lin,G
+280,Shaun,Livingston,G,6.0,7.0,79.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Shaun Livingston,G
+281,Zach,Lofton,G,6.0,4.0,76.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Zach Lofton,G
+282,Kevon,Looney,F,6.0,9.0,81.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Kevon Looney,F
+283,Brook,Lopez,C,7.0,1.0,85.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Brook Lopez,C
+284,Robin,Lopez,C,7.0,0.0,84.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Robin Lopez,C
+285,Kevin,Love,F-C,6.0,8.0,80.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Kevin Love,F-C
+286,Kyle,Lowry,G,6.0,0.0,72.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Kyle Lowry,G
+287,Jordan,Loyd,G,6.0,4.0,76.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Jordan Loyd,G
+288,Timothe,Luwawu-Cabarrot,G-F,6.0,7.0,79.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Timothe Luwawu-Cabarrot,G-F
+289,Tyler,Lydon,F,6.0,10.0,82.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Tyler Lydon,F
+290,Trey,Lyles,F,6.0,9.0,81.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Trey Lyles,F
+291,Shelvin,Mack,G,6.0,3.0,75.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Shelvin Mack,G
+292,Daryl,Macon,G,6.0,3.0,75.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Daryl Macon,G
+293,J.P.,Macura,G,6.0,5.0,77.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,J.P. Macura,G
+294,Ian,Mahinmi,C,6.0,11.0,83.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Ian Mahinmi,C
+295,Thon,Maker,F,7.0,0.0,84.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Thon Maker,F
+296,Boban,Marjanovic,C,7.0,4.0,88.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Boban Marjanovic,C
+297,Lauri,Markkanen,F,7.0,0.0,84.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Lauri Markkanen,F
+298,Jarell,Martin,F,6.0,10.0,82.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Jarell Martin,F
+299,Frank,Mason,G,5.0,11.0,71.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Frank Mason,G
+300,Yante,Maten,F,6.0,8.0,80.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Yante Maten,F
+301,Wesley,Matthews,G-F,6.0,5.0,77.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Wesley Matthews,G-F
+302,Luc,Mbah a Moute,F,6.0,8.0,80.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Luc Mbah a Moute,F
+303,CJ,McCollum,G,6.0,3.0,75.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,CJ McCollum,G
+304,T.J.,McConnell,G,6.0,1.0,73.0,,,,,,,,12,IND,Indiana Pacers,East,Central,T.J. McConnell,G
+305,Doug,McDermott,F,6.0,6.0,78.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Doug McDermott,F
+306,JaVale,McGee,C,7.0,0.0,84.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,JaVale McGee,C
+307,Rodney,McGruder,F-G,6.0,4.0,76.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Rodney McGruder,G-F
+308,Alfonzo,McKinnie,F,6.0,7.0,79.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Alfonzo McKinnie,F
+309,Ben,McLemore,G,6.0,3.0,75.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Ben McLemore,G
+310,Jordan,McRae,G,6.0,5.0,77.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Jordan McRae,G
+311,Jodie,Meeks,G,6.0,4.0,76.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Jodie Meeks,G
+312,Salah,Mejri,C,7.0,2.0,86.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Salah Mejri,C
+313,De'Anthony,Melton,G,6.0,3.0,75.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,De'Anthony Melton,G
+314,Chimezie,Metu,F,6.0,10.0,82.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Chimezie Metu,F
+315,Khris,Middleton,F,6.0,7.0,79.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Khris Middleton,F
+316,CJ,Miles,F-G,6.0,6.0,78.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,CJ Miles,G-F
+317,Darius,Miller,F,6.0,6.0,78.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Darius Miller,F
+318,Paul,Millsap,F,6.0,7.0,79.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Paul Millsap,F
+319,Patty,Mills,G,6.0,2.0,74.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Patty Mills,G
+320,Shake,Milton,G,6.0,5.0,77.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Shake Milton,G
+321,Nikola,Mirotic,F,6.0,10.0,82.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Nikola Mirotic,F
+322,Donovan,Mitchell,G,6.0,3.0,75.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Donovan Mitchell,G
+323,Naz,Mitrou-Long,G,6.0,3.0,75.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Naz Mitrou-Long,G
+324,Malik,Monk,G,6.0,3.0,75.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Malik Monk,G
+325,Greg,Monroe,C,6.0,10.0,82.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Greg Monroe,C
+326,E'Twaun,Moore,G,6.0,3.0,75.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,E'Twaun Moore,G
+327,Jaylen,Morris,G,6.0,5.0,77.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Jaylen Morris,G
+328,Marcus,Morris,F,6.0,8.0,80.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Marcus Morris,F
+329,Markieff,Morris,F,6.0,9.0,81.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Markieff Morris,F
+330,Monte,Morris,G,6.0,2.0,74.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Monte Morris,G
+331,Johnathan,Motley,F,6.0,8.0,80.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Johnathan Motley,F
+332,Timofey,Mozgov,C,7.0,1.0,85.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Timofey Mozgov,C
+333,Emmanuel,Mudiay,G,6.0,3.0,75.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Emmanuel Mudiay,G
+334,Dejounte,Murray,G,6.0,4.0,76.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Dejounte Murray,G
+335,Jamal,Murray,G,6.0,4.0,76.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Jamal Murray,G
+336,Dzanan,Musa,G-F,6.0,9.0,81.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,Dzanan Musa,G-F
+337,Mike,Muscala,F-C,6.0,10.0,82.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Mike Muscala,F-C
+338,Svi,Mykhailiuk,G,6.0,7.0,79.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Svi Mykhailiuk,G
+339,Abdel,Nader,F,6.0,5.0,77.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Abdel Nader,F
+340,Larry,Nance Jr.,F,6.0,8.0,80.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Larry Nance Jr.,F
+341,Shabazz,Napier,G,6.0,0.0,72.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Shabazz Napier,G
+342,Nene,,C-F,6.0,11.0,83.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Nene ,F-C
+343,Raul,Neto,G,6.0,2.0,74.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Raul Neto,G
+344,Georges,Niang,F,6.0,7.0,79.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Georges Niang,F
+345,Nerlens,Noel,F-C,6.0,11.0,83.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,Nerlens Noel,F-C
+346,Dirk,Nowitzki,F,7.0,0.0,84.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Dirk Nowitzki,F
+347,Frank,Ntilikina,G,6.0,4.0,76.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Frank Ntilikina,G
+348,James,Nunnally,F,6.0,7.0,79.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,James Nunnally,F
+349,Jusuf,Nurkic,C,7.0,0.0,84.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Jusuf Nurkic,C
+350,David,Nwaba,G,6.0,5.0,77.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,David Nwaba,G
+351,Royce,O'Neale,F,6.0,6.0,78.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Royce O'Neale,F
+352,Kyle,O'Quinn,C,6.0,9.0,81.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Kyle O'Quinn,C
+353,Semi,Ojeleye,F,6.0,6.0,78.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Semi Ojeleye,F
+354,Jahlil,Okafor,C,6.0,10.0,82.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Jahlil Okafor,C
+355,Elie,Okobo,G,6.0,3.0,75.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Elie Okobo,G
+356,Josh,Okogie,G,6.0,4.0,76.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Josh Okogie,G
+357,Victor,Oladipo,G,6.0,3.0,75.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Victor Oladipo,G
+358,Kelly,Olynyk,F,6.0,11.0,83.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Kelly Olynyk,F
+359,Cedi,Osman,F,6.0,7.0,79.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Cedi Osman,F
+360,Kelly,Oubre Jr.,F,6.0,8.0,80.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Kelly Oubre Jr.,F
+361,Zaza,Pachulia,C,6.0,11.0,83.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Zaza Pachulia,C
+362,Jabari,Parker,F,6.0,8.0,80.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Jabari Parker,F
+363,Tony,Parker,G,6.0,2.0,74.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Tony Parker,G
+364,Chandler,Parsons,F,6.0,10.0,82.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Chandler Parsons,F
+365,Patrick,Patterson,F,6.0,8.0,80.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Patrick Patterson,F
+366,Justin,Patton,C,6.0,11.0,83.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Justin Patton,C
+367,Chris,Paul,G,6.0,0.0,72.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Chris Paul,G
+368,Cameron,Payne,G,6.0,3.0,75.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Cameron Payne,G
+369,Elfrid,Payton,G,6.0,3.0,75.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Elfrid Payton,G
+370,Theo,Pinson,G-F,6.0,7.0,79.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Theo Pinson,G-F
+371,Mason,Plumlee,F-C,6.0,10.0,82.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Mason Plumlee,F-C
+372,Miles,Plumlee,C,6.0,11.0,83.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Miles Plumlee,C
+373,Jakob,Poeltl,C,7.0,0.0,84.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Jakob Poeltl,C
+374,Quincy,Pondexter,F,6.0,7.0,79.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Quincy Pondexter,F
+375,Michael,Porter Jr.,F,6.0,10.0,82.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Michael Porter Jr.,F
+376,Otto,Porter Jr.,F,6.0,8.0,80.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Otto Porter Jr.,F
+377,Bobby,Portis,F,6.0,10.0,82.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Bobby Portis,F
+378,Kristaps,Porzingis,F-C,7.0,2.0,86.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Kristaps Porzingis,F-C
+379,Dwight,Powell,F-C,6.0,10.0,82.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Dwight Powell,F-C
+380,Norman,Powell,F-G,6.0,4.0,76.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Norman Powell,G-F
+381,Alex,Poythress,F,6.0,9.0,81.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Alex Poythress,F
+382,Billy,Preston,F,,,,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Billy Preston,F
+383,Taurean,Prince,F,6.0,6.0,78.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Taurean Prince,F
+384,Zhou,Qi,F-C,7.0,1.0,85.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Zhou Qi,F-C
+385,Ivan,Rabb,F,6.0,10.0,82.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Ivan Rabb,F
+386,Chasson,Randle,G,6.0,2.0,74.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Chasson Randle,G
+387,Julius,Randle,F,6.0,9.0,81.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Julius Randle,F
+388,Zach,Randolph,F,6.0,9.0,81.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Zach Randolph,F
+389,JJ,Redick,G,6.0,3.0,75.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,JJ Redick,G
+390,Davon,Reed,G,6.0,5.0,77.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Davon Reed,G
+391,Josh,Richardson,G-F,6.0,5.0,77.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Josh Richardson,G-F
+392,Malachi,Richardson,G,6.0,6.0,78.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Malachi Richardson,G
+393,Austin,Rivers,G,6.0,4.0,76.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Austin Rivers,G
+394,Andre,Roberson,G-F,6.0,7.0,79.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Andre Roberson,G-F
+395,Glenn,Robinson III,G-F,6.0,6.0,78.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Glenn Robinson III,G-F
+396,Devin,Robinson,F,6.0,8.0,80.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Devin Robinson,F
+397,Duncan,Robinson,F,6.0,7.0,79.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Duncan Robinson,F
+398,Jerome,Robinson,G,6.0,5.0,77.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Jerome Robinson,G
+399,Mitchell,Robinson,C,7.0,0.0,84.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Mitchell Robinson,C
+400,Rajon,Rondo,G,6.0,1.0,73.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Rajon Rondo,G
+401,Derrick,Rose,G,6.0,3.0,75.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Derrick Rose,G
+402,Terrence,Ross,G-F,6.0,7.0,79.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Terrence Ross,G-F
+403,Terry,Rozier,G,6.0,1.0,73.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Terry Rozier,G
+404,Ricky,Rubio,G,6.0,2.0,74.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Ricky Rubio,G
+405,D'Angelo,Russell,G,6.0,3.0,75.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,D'Angelo Russell,G
+406,Domantas,Sabonis,F,6.0,10.0,82.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Domantas Sabonis,F
+407,Dario,Saric,F,6.0,10.0,82.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Dario Saric,F
+408,Tomas,Satoransky,G-F,6.0,7.0,79.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Tomas Satoransky,G-F
+409,Dennis,Schroder,G,6.0,1.0,73.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Dennis Schroder,G
+410,Mike,Scott,F,6.0,7.0,79.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Mike Scott,F
+411,Thabo,Sefolosha,F,6.0,6.0,78.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Thabo Sefolosha,F
+412,Wayne,Selden,G-F,6.0,5.0,77.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Wayne Selden,G-F
+413,Collin,Sexton,G,6.0,3.0,75.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Collin Sexton,G
+414,Landry,Shamet,G,6.0,4.0,76.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Landry Shamet,G
+415,Iman,Shumpert,G,6.0,5.0,77.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Iman Shumpert,G
+416,Pascal,Siakam,F,6.0,8.0,80.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Pascal Siakam,F
+417,Ben,Simmons,G-F,6.0,10.0,82.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Ben Simmons,G-F
+418,Jonathon,Simmons,F,6.0,6.0,78.0,,,,,,,,27,SAS,San Antonio Spurs,West,Southwest,Jonathon Simmons,F
+419,Anfernee,Simons,G,6.0,3.0,75.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Anfernee Simons,G
+420,Marcus,Smart,G,6.0,3.0,75.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Marcus Smart,G
+421,Dennis,Smith Jr.,G,6.0,3.0,75.0,,,,,,,,3,BKN,Brooklyn Nets,East,Atlantic,Dennis Smith Jr.,G
+422,Ish,Smith,G,6.0,0.0,72.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Ish Smith,G
+423,Jason,Smith,F-C,7.0,0.0,84.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Jason Smith,F-C
+424,JR,Smith,G-F,6.0,6.0,78.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,JR Smith,G-F
+425,Zhaire,Smith,G,6.0,3.0,75.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Zhaire Smith,G
+426,Tony,Snell,G,6.0,6.0,78.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Tony Snell,G
+427,Ray,Spalding,F,6.0,9.0,81.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Ray Spalding,F
+428,Omari,Spellman,F,6.0,8.0,80.0,,,,,,,,10,GSW,Golden State Warriors,West,Pacific,Omari Spellman,F
+429,Nik,Stauskas,G,6.0,6.0,78.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Nik Stauskas,G
+430,DJ,Stephens,G-F,6.0,5.0,77.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,DJ Stephens,G-F
+431,Lance,Stephenson,G,6.0,5.0,77.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Lance Stephenson,G
+432,Edmond,Sumner,G,6.0,4.0,76.0,,,,,,,,4,CHA,Charlotte Hornets,East,Southeast,Edmond Sumner,G
+433,Caleb,Swanigan,F,6.0,9.0,81.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Caleb Swanigan,F
+434,Jayson,Tatum,F,6.0,8.0,80.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Jayson Tatum,F
+435,Jeff,Teague,G,6.0,3.0,75.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Jeff Teague,G
+436,Garrett,Temple,G-F,6.0,5.0,77.0,,,,,,,,28,TOR,Toronto Raptors,East,Atlantic,Garrett Temple,G-F
+437,Milos,Teodosic,G,6.0,5.0,77.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Milos Teodosic,G
+438,Jared,Terrell,G,6.0,3.0,75.0,,,,,,,,18,MIN,Minnesota Timberwolves,West,Northwest,Jared Terrell,G
+439,Daniel,Theis,F,6.0,8.0,80.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Daniel Theis,F
+440,Isaiah,Thomas,G,5.0,9.0,69.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Isaiah Thomas,G
+441,Khyri,Thomas,G,6.0,3.0,75.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Khyri Thomas,G
+442,Lance,Thomas,F,6.0,8.0,80.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Lance Thomas,F
+443,Klay,Thompson,G,6.0,5.0,77.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Klay Thompson,G
+444,Tristan,Thompson,C-F,6.0,9.0,81.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Tristan Thompson,F-C
+445,Sindarius,Thornwell,G,6.0,4.0,76.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Sindarius Thornwell,G
+446,Anthony,Tolliver,F,6.0,8.0,80.0,,,,,,,,9,DET,Detroit Pistons,East,Central,Anthony Tolliver,F
+447,Karl-Anthony,Towns,C,7.0,0.0,84.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Karl-Anthony Towns,C
+448,Gary,Trent Jr.,G,,,,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Gary Trent Jr.,G
+449,Allonzo,Trier,G,6.0,5.0,77.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Allonzo Trier,G
+450,PJ,Tucker,F,6.0,5.0,77.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,PJ Tucker,F
+451,Evan,Turner,G-F,6.0,6.0,78.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Evan Turner,G-F
+452,Myles,Turner,C-F,6.0,11.0,83.0,,,,,,,,12,IND,Indiana Pacers,East,Central,Myles Turner,F-C
+453,Ekpe,Udoh,C-F,6.0,10.0,82.0,,,,,,,,17,MIL,Milwaukee Bucks,East,Central,Ekpe Udoh,F-C
+454,Tyler,Ulis,G,5.0,10.0,70.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Tyler Ulis,G
+455,Jonas,Valanciunas,C,6.0,11.0,83.0,,,,,,,,26,SAC,Sacramento Kings,West,Pacific,Jonas Valanciunas,C
+456,Denzel,Valentine,G,6.0,4.0,76.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Denzel Valentine,G
+457,Jarred,Vanderbilt,F,6.0,8.0,80.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Jarred Vanderbilt,F
+458,Fred,VanVleet,G,6.0,0.0,72.0,,,,,,,,11,HOU,Houston Rockets,West,Southwest,Fred VanVleet,G
+459,Noah,Vonleh,F,6.0,10.0,82.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Noah Vonleh,F
+460,Nikola,Vucevic,C,6.0,10.0,82.0,,,,,,,,5,CHI,Chicago Bulls,East,Central,Nikola Vucevic,C
+461,Dwyane,Wade,G,6.0,4.0,76.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Dwyane Wade,G
+462,Moritz,Wagner,C,6.0,11.0,83.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Moritz Wagner,C
+463,Dion,Waiters,G,6.0,3.0,75.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Dion Waiters,G
+464,Lonnie,Walker IV,G,6.0,4.0,76.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Lonnie Walker IV,G
+465,Kemba,Walker,G,6.0,0.0,72.0,,,,,,,,7,DAL,Dallas Mavericks,West,Southwest,Kemba Walker,G
+466,Tyrone,Wallace,G,6.0,5.0,77.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Tyrone Wallace,G
+467,John,Wall,G,6.0,3.0,75.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,John Wall,G
+468,Brad,Wanamaker,G,6.0,3.0,75.0,,,,,,,,30,WAS,Washington Wizards,East,Southeast,Brad Wanamaker,G
+469,T.J.,Warren,F,6.0,8.0,80.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,T.J. Warren,F
+470,Yuta,Watanabe,G,6.0,9.0,81.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Yuta Watanabe,G
+471,Thomas,Welsh,C,7.0,0.0,84.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Thomas Welsh,C
+472,Russell,Westbrook,G,6.0,4.0,76.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Russell Westbrook,G
+473,Derrick,White,G,6.0,4.0,76.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Derrick White,G
+474,Hassan,Whiteside,C,7.0,0.0,84.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Hassan Whiteside,C
+475,Andrew,Wiggins,F-G,6.0,7.0,79.0,,,,,,,,16,MIA,Miami Heat,East,Southeast,Andrew Wiggins,G-F
+476,Robert,Williams III,C-F,6.0,9.0,81.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Robert Williams III,F-C
+477,Alan,Williams,F-C,6.0,8.0,80.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Alan Williams,F-C
+478,C.J.,Williams,G,6.0,5.0,77.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,C.J. Williams,G
+479,Johnathan,Williams,F,6.0,9.0,81.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Johnathan Williams,F
+480,Kenrich,Williams,G-F,6.0,6.0,78.0,,,,,,,,21,OKC,Oklahoma City Thunder,West,Northwest,Kenrich Williams,G-F
+481,Lou,Williams,G,6.0,2.0,74.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Lou Williams,G
+482,Marvin,Williams,F,6.0,8.0,80.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Marvin Williams,F
+483,Troy,Williams,F,6.0,7.0,79.0,,,,,,,,15,MEM,Memphis Grizzlies,West,Southwest,Troy Williams,F
+484,D.J.,Wilson,F,6.0,10.0,82.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,D.J. Wilson,F
+485,Justise,Winslow,F,6.0,6.0,78.0,,,,,,,,25,POR,Portland Trail Blazers,West,Northwest,Justise Winslow,F
+486,Christian,Wood,F,6.0,8.0,80.0,,,,,,,,14,LAL,Los Angeles Lakers,West,Pacific,Christian Wood,F
+487,Delon,Wright,G,6.0,5.0,77.0,,,,,,,,20,NYK,New York Knicks,East,Atlantic,Delon Wright,G
+488,Guerschon,Yabusele,F,6.0,8.0,80.0,,,,,,,,23,PHI,Philadelphia 76ers,East,Atlantic,Guerschon Yabusele,F
+489,Thaddeus,Young,F,6.0,8.0,80.0,,,,,,,,24,PHX,Phoenix Suns,West,Pacific,Thaddeus Young,F
+490,Trae,Young,G,6.0,1.0,73.0,,,,,,,,1,ATL,Atlanta Hawks,East,Southeast,Trae Young,G
+491,Cody,Zeller,C,6.0,11.0,83.0,,,,,,,,19,NOP,New Orleans Pelicans,West,Southwest,Cody Zeller,C
+492,Ante,Zizic,C,6.0,10.0,82.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,Ante Zizic,C
+493,Ivica,Zubac,C,7.0,0.0,84.0,,,,,,,,13,LAC,LA Clippers,West,Pacific,Ivica Zubac,C
+494,Michael,Smith,,6.0,10.0,82.0,,,,,,,,2,BOS,Boston Celtics,East,Atlantic,Michael Smith,
+495,John,Morton,,6.0,3.0,75.0,,,,,,,,6,CLE,Cleveland Cavaliers,East,Central,John Morton,
+496,Howard,Wright,,6.0,8.0,80.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Howard Wright,
+497,Michael,Ansley,,6.0,7.0,79.0,,,,,,,,22,ORL,Orlando Magic,East,Southeast,Michael Ansley,
+498,John,Salley,,6.0,11.0,83.0,,,,,,,,9,DET,Detroit Pistons,East,Central,John Salley,
+499,Dan,Schayes,,6.0,11.0,83.0,,,,,,,,8,DEN,Denver Nuggets,West,Northwest,Dan Schayes,
+500,Mark,Eaton,,7.0,4.0,88.0,,,,,,,,29,UTA,Utah Jazz,West,Northwest,Mark Eaton,

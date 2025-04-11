@@ -66,8 +66,7 @@ INSTALLED_APPS = [
     # Third-party apps
     
     # Local apps (we'll create these next)
-    'nba_data',
-    'dashboard',
+    'nba_data'
 ]
 
 MIDDLEWARE = [

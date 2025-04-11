@@ -97,7 +97,8 @@ class Command(BaseCommand):
                     (prepared_games_df, 'games.csv'),
                     (team_stats_df, 'team_stats.csv'),
                     (team_metrics_df, 'team_metrics.csv'),
-                    (team_rankings_df, 'team_rankings.csv')
+                    (team_rankings_df, 'team_rankings.csv'),
+                    (cleaned_teams_df, 'teams.csv')
                 ]
                 
                 # Export each dataframe
