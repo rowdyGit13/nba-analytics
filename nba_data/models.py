@@ -47,7 +47,7 @@ class Game(models.Model):
     visitor_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='away_games')
     home_team_score = models.IntegerField()
     visitor_team_score = models.IntegerField()
-    season = models.IntegerField()
+    season = models.CharField(max_length=9)  # Stores NBA season in YYYY-YYYY format (e.g., '2022-2023')
     status = models.CharField(max_length=20)
     period = models.IntegerField(null=True, blank=True)
     time = models.CharField(max_length=10, null=True, blank=True)

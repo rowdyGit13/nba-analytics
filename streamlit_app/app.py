@@ -1,41 +1,55 @@
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
 import os
 import sys
 from pathlib import Path
+
+# Add parent directory to Python path to find streamlit_app module
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, parent_dir)
+
+# Set current directory for relative paths
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Now we can import our modules
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 import logging
+from datetime import datetime
+import json
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, 
-                   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# Setup logging
 logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
-# Define paths
-DATA_DIR = Path(__file__).parent / "data"
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
+# Import our data loader
+try:
+    from data_loader.load_data import get_data
+    from chart_utils import create_team_bar_chart, style_dataframe
+    from team_colors import get_team_colors, get_team_logo
+except ImportError as e:
+    logger.error(f"Error importing modules: {e}")
+    # Try alternative import path
+    try:
+        from streamlit_app.data_loader.load_data import get_data
+        from streamlit_app.chart_utils import create_team_bar_chart, style_dataframe
+        from streamlit_app.team_colors import get_team_colors, get_team_logo
+    except ImportError:
+        logger.error("Failed to import required modules")
+        st.error("Failed to load necessary modules. Please check the logs for details.")
+        sys.exit(1)
 
-# Directly load processed dataframes from CSV files
-def load_csv_dataframe(filename):
-    """Load a dataframe from a CSV file in the processed data directory"""
-    filepath = PROCESSED_DATA_DIR / filename
-    if os.path.exists(filepath):
-        try:
-            df = pd.read_csv(filepath)
-            logger.info(f"Loaded {filename} with {len(df)} records")
-            return df
-        except Exception as e:
-            logger.error(f"Error loading {filename}: {e}")
-    else:
-        logger.warning(f"File not found: {filepath}")
-    return pd.DataFrame()
-
-# Load all required dataframes directly from CSV files
-cleaned_players_df = load_csv_dataframe("players.csv")
-cleaned_teams_df = load_csv_dataframe("teams.csv")
-prepared_games_df = load_csv_dataframe("games.csv")
-team_metrics_df = load_csv_dataframe("team_metrics.csv")
-team_rankings_df = load_csv_dataframe("team_rankings.csv")
+# Load all required dataframes directly from Django with CSV files as fallback
+logger.info("Loading data for NBA Analytics Dashboard...")
+data = get_data()
+cleaned_players_df = data['players_df']
+cleaned_teams_df = data['teams_df']
+prepared_games_df = data['games_df']
+team_metrics_df = data['team_metrics_df']
+team_rankings_df = data['team_rankings_df']
 
 # App setup
 st.set_page_config(
@@ -45,7 +59,11 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Function to get seasons
+# Apply custom CSS
+with open(os.path.join(current_dir, "style.css")) as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Function to get seasons of format YYYY-YYYY
 def get_seasons():
     if not prepared_games_df.empty:
         return sorted(prepared_games_df['season'].unique().tolist(), reverse=True)
@@ -70,8 +88,10 @@ if choice == "Home":
     """)
     
     # Display data summary
-    st.subheader("Data Summary")
-    col1, col2, col3 = st.columns(3)
+    st.subheader("Summary of Data Repository")
+    #add subtitle
+    st.markdown("Collected from an NBA API: [balldontlie.io](https://balldontlie.io/)")
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         st.metric("Teams", len(cleaned_teams_df) if not cleaned_teams_df.empty else 0)
@@ -82,8 +102,21 @@ if choice == "Home":
     with col3:
         st.metric("Games", len(prepared_games_df) if not prepared_games_df.empty else 0)
     
-    # Display a welcome image
-    st.image("https://cdn.nba.com/manage/2021/08/NBA-75th-anniversary-diamond-logo.jpg", width=600)
+    with col4:
+        # Get the seasons range
+        if not prepared_games_df.empty and 'season' in prepared_games_df.columns:
+            seasons = sorted(prepared_games_df['season'].unique())
+            if seasons:
+                first_season = seasons[0]
+                last_season = seasons[-1]
+                seasons_range = f"{first_season} to {last_season}"
+            else:
+                seasons_range = "N/A"
+        else:
+            seasons_range = "N/A"
+        
+        # make sure entire season range is displayed without truncation
+        st.metric("Seasons", seasons_range, help=f"{seasons_range}")
 
 # Search page
 elif choice == "Search":
@@ -125,33 +158,36 @@ elif choice == "Search":
                 if not filtered_players.empty:
                     # Display player cards (up to 5)
                     for _, player in filtered_players.head(5).iterrows():
-                        col1, col2 = st.columns([1, 3])
-                        
-                        with col1:
-                            # Display a placeholder NBA logo or player image if available
-                            st.image("https://cdn.nba.com/logos/nba/nba-logoman-75.svg", width=100)
-                        
-                        with col2:
-                            st.subheader(player['full_name'])
-                            st.write(f"**Position:** {player['position'] if pd.notna(player['position']) else 'N/A'}")
-                            st.write(f"**Height:** {player['height_feet']}-{player['height_inches'] if pd.notna(player['height_feet']) else 'N/A'}")
+                        with st.container():
+                            st.markdown("""<div class="player-card">""", unsafe_allow_html=True)
+                            col1, col2 = st.columns([1, 3])
                             
-                            # Use position_standard if available (from cleaned data)
-                            if 'position_standard' in player and pd.notna(player['position_standard']):
-                                st.write(f"**Standard Position:** {player['position_standard']}")
+                            with col1:
+                                # Display a placeholder NBA logo or player image if available
+                                st.image("https://cdn.nba.com/logos/nba/nba-logoman-75.svg", width=100)
                             
-                            # Team info - check for both raw and cleaned column names
-                            team_name_col = next((col for col in ['team_name', 'team__full_name'] if col in player and pd.notna(player[col])), None)
-                            if team_name_col:
-                                st.write(f"**Team:** {player[team_name_col]}")
-                            
-                            team_conf_col = next((col for col in ['team_conference', 'team__conference'] if col in player and pd.notna(player[col])), None)
-                            if team_conf_col:
-                                st.write(f"**Team Conference:** {player[team_conf_col]}")
-                            
-                            team_div_col = next((col for col in ['team_division', 'team__division'] if col in player and pd.notna(player[col])), None)
-                            if team_div_col:
-                                st.write(f"**Team Division:** {player[team_div_col]}")
+                            with col2:
+                                st.subheader(player['full_name'])
+                                st.write(f"**Position:** {player['position'] if pd.notna(player['position']) else 'N/A'}")
+                                st.write(f"**Height:** {player['height_feet']}-{player['height_inches'] if pd.notna(player['height_feet']) else 'N/A'}")
+                                
+                                # Use position_standard if available (from cleaned data)
+                                if 'position_standard' in player and pd.notna(player['position_standard']):
+                                    st.write(f"**Standard Position:** {player['position_standard']}")
+                                
+                                # Team info - check for both raw and cleaned column names
+                                team_name_col = next((col for col in ['team_name', 'team__full_name'] if col in player and pd.notna(player[col])), None)
+                                if team_name_col:
+                                    st.write(f"**Team:** {player[team_name_col]}")
+                                
+                                team_conf_col = next((col for col in ['team_conference', 'team__conference'] if col in player and pd.notna(player[col])), None)
+                                if team_conf_col:
+                                    st.write(f"**Team Conference:** {player[team_conf_col]}")
+                                
+                                team_div_col = next((col for col in ['team_division', 'team__division'] if col in player and pd.notna(player[col])), None)
+                                if team_div_col:
+                                    st.write(f"**Team Division:** {player[team_div_col]}")
+                            st.markdown("""</div>""", unsafe_allow_html=True)
                 else:
                     st.warning(f"No players found matching '{player_name}'")
     
@@ -172,43 +208,46 @@ elif choice == "Search":
                     # Try to get team metrics from processed data first (more accurate)
                     filtered_metrics = team_metrics_df[
                         (team_metrics_df['team_id'] == team_id) & 
-                        (team_metrics_df['season'] == int(selected_season))
+                        (team_metrics_df['season'] == selected_season)
                     ] if not team_metrics_df.empty else pd.DataFrame()
                     
                     if not filtered_metrics.empty:
                         # Display team card with advanced metrics
-                        col1, col2 = st.columns([1, 3])
-                        
-                        with col1:
-                            # Display team logo (placeholder)
-                            st.image("https://cdn.nba.com/logos/nba/nba-logoman-75.svg", width=150)
-                        
-                        with col2:
-                            # Team metrics contains more accurate and comprehensive stats
-                            team_metrics = filtered_metrics.iloc[0]
+                        with st.container():
+                            st.markdown("""<div class="team-card">""", unsafe_allow_html=True)
+                            col1, col2 = st.columns([1, 3])
                             
-                            st.subheader(f"{selected_team} ({selected_season})")
-                            st.write(f"**Record:** {int(team_metrics['wins'])}-{int(team_metrics['losses'])}")
-                            st.write(f"**Win %:** {team_metrics['win_pct']:.3f}")
-                            st.write(f"**Points Per Game:** {team_metrics['points_per_game']:.1f}")
-                            st.write(f"**Points Allowed Per Game:** {team_metrics['points_allowed_per_game']:.1f}")
-                            st.write(f"**Home Record:** {int(team_metrics['home_wins'])}-{int(team_metrics['home_games']-team_metrics['home_wins'])}")
-                            st.write(f"**Away Record:** {int(team_metrics['away_wins'])}-{int(team_metrics['away_games']-team_metrics['away_wins'])}")
+                            with col1:
+                                # Display team logo (placeholder)
+                                st.image("https://cdn.nba.com/logos/nba/nba-logoman-75.svg", width=150)
                             
-                            # Show advanced metrics if available
-                            if 'net_rating' in team_metrics:
-                                st.write(f"**Net Rating:** {team_metrics['net_rating']:.1f}")
-                            if 'offensive_rating' in team_metrics:
-                                st.write(f"**Offensive Rating:** {team_metrics['offensive_rating']:.1f}")
-                            if 'defensive_rating' in team_metrics:
-                                st.write(f"**Defensive Rating:** {team_metrics['defensive_rating']:.1f}")
+                            with col2:
+                                # Team metrics contains more accurate and comprehensive stats
+                                team_metrics = filtered_metrics.iloc[0]
+                                
+                                st.subheader(f"{selected_team} ({selected_season})")
+                                st.write(f"**Record:** {int(team_metrics['wins'])}-{int(team_metrics['losses'])}")
+                                st.write(f"**Win %:** {team_metrics['win_pct']:.3f}")
+                                st.write(f"**Points Per Game:** {team_metrics['points_per_game']:.1f}")
+                                st.write(f"**Points Allowed Per Game:** {team_metrics['points_allowed_per_game']:.1f}")
+                                st.write(f"**Home Record:** {int(team_metrics['home_wins'])}-{int(team_metrics['home_games']-team_metrics['home_wins'])}")
+                                st.write(f"**Away Record:** {int(team_metrics['away_wins'])}-{int(team_metrics['away_games']-team_metrics['away_wins'])}")
+                                
+                                # Show advanced metrics if available
+                                if 'net_rating' in team_metrics:
+                                    st.write(f"**Net Rating:** {team_metrics['net_rating']:.1f}")
+                                if 'offensive_rating' in team_metrics:
+                                    st.write(f"**Offensive Rating:** {team_metrics['offensive_rating']:.1f}")
+                                if 'defensive_rating' in team_metrics:
+                                    st.write(f"**Defensive Rating:** {team_metrics['defensive_rating']:.1f}")
+                            st.markdown("""</div>""", unsafe_allow_html=True)
                     else:
                         # Fallback to calculating from raw game data
                         st.warning(f"No team metrics available for {selected_team} in {selected_season} season. Using raw game data instead.")
                         
                         # Calculate team stats for the selected season
-                        home_games = prepared_games_df[(prepared_games_df['home_team_id'] == team_id) & (prepared_games_df['season'] == int(selected_season))]
-                        away_games = prepared_games_df[(prepared_games_df['visitor_team_id'] == team_id) & (prepared_games_df['season'] == int(selected_season))]
+                        home_games = prepared_games_df[(prepared_games_df['home_team_id'] == team_id) & (prepared_games_df['season'] == selected_season)]
+                        away_games = prepared_games_df[(prepared_games_df['visitor_team_id'] == team_id) & (prepared_games_df['season'] == selected_season)]
                         
                         if not home_games.empty or not away_games.empty:
                             # Calculate wins and losses
@@ -233,19 +272,22 @@ elif choice == "Search":
                             papg = (home_games['visitor_team_score'].sum() + away_games['home_team_score'].sum()) / games_played if games_played > 0 else 0
                             
                             # Display team card
-                            col1, col2 = st.columns([1, 3])
-                            
-                            with col1:
-                                # Display team logo (placeholder)
-                                st.image("https://cdn.nba.com/logos/nba/nba-logoman-75.svg", width=150)
-                            
-                            with col2:
-                                st.subheader(f"{selected_team} ({selected_season})")
-                                st.write(f"**Record:** {total_wins}-{total_losses}")
-                                st.write(f"**Points Per Game:** {ppg:.1f}")
-                                st.write(f"**Points Allowed Per Game:** {papg:.1f}")
-                                st.write(f"**Home Record:** {home_wins}-{home_losses}")
-                                st.write(f"**Away Record:** {away_wins}-{away_losses}")
+                            with st.container():
+                                st.markdown("""<div class="team-card">""", unsafe_allow_html=True)
+                                col1, col2 = st.columns([1, 3])
+                                
+                                with col1:
+                                    # Display team logo (placeholder)
+                                    st.image("https://cdn.nba.com/logos/nba/nba-logoman-75.svg", width=150)
+                                
+                                with col2:
+                                    st.subheader(f"{selected_team} ({selected_season})")
+                                    st.write(f"**Record:** {total_wins}-{total_losses}")
+                                    st.write(f"**Points Per Game:** {ppg:.1f}")
+                                    st.write(f"**Points Allowed Per Game:** {papg:.1f}")
+                                    st.write(f"**Home Record:** {home_wins}-{home_losses}")
+                                    st.write(f"**Away Record:** {away_wins}-{away_losses}")
+                                st.markdown("""</div>""", unsafe_allow_html=True)
                         else:
                             st.warning(f"No game data available for {selected_team} in the {selected_season} season")
         else:
@@ -282,57 +324,67 @@ elif choice == "Data Visualization":
                          "Net Rating vs Season"]
                     )
                     
-                    # Create visualization based on selection
-                    fig, ax = plt.subplots(figsize=(10, 6))
+                    # Set up chart parameters based on selection
+                    x_data = team_data['season'].astype(str)
                     
                     if viz_type == "Points Per Game vs Season":
-                        ax.bar(team_data['season'].astype(str), team_data['points_per_game'], color='blue')
-                        ax.set_ylabel('Points Per Game')
-                        ax.set_title(f'{selected_team} - Points Per Game by Season')
+                        chart_type = 'ppg'
+                        y_data = team_data['points_per_game']
                     
                     elif viz_type == "Points Allowed Per Game vs Season":
-                        ax.bar(team_data['season'].astype(str), team_data['points_allowed_per_game'], color='red')
-                        ax.set_ylabel('Points Allowed Per Game')
-                        ax.set_title(f'{selected_team} - Points Allowed Per Game by Season')
+                        chart_type = 'papg'
+                        y_data = team_data['points_allowed_per_game']
                     
                     elif viz_type == "Win Percentage vs Season":
-                        ax.bar(team_data['season'].astype(str), team_data['win_pct'], color='green')
-                        ax.set_ylabel('Win Percentage')
-                        ax.set_title(f'{selected_team} - Win Percentage by Season')
+                        chart_type = 'win_pct'
+                        y_data = team_data['win_pct']
                     
                     elif viz_type == "Home Win Percentage vs Season":
                         if 'home_win_pct' in team_data.columns:
-                            ax.bar(team_data['season'].astype(str), team_data['home_win_pct'], color='purple')
-                            ax.set_ylabel('Home Win Percentage')
-                            ax.set_title(f'{selected_team} - Home Win Percentage by Season')
+                            chart_type = 'home'
+                            y_data = team_data['home_win_pct']
                         else:
                             st.warning("Home win percentage data not available")
+                            chart_type = None
                     
                     elif viz_type == "Away Win Percentage vs Season":
                         if 'away_win_pct' in team_data.columns:
-                            ax.bar(team_data['season'].astype(str), team_data['away_win_pct'], color='orange')
-                            ax.set_ylabel('Away Win Percentage')
-                            ax.set_title(f'{selected_team} - Away Win Percentage by Season')
+                            chart_type = 'away'
+                            y_data = team_data['away_win_pct']
                         else:
                             st.warning("Away win percentage data not available")
+                            chart_type = None
                     
                     elif viz_type == "Net Rating vs Season":
                         if 'net_rating' in team_data.columns:
-                            ax.bar(team_data['season'].astype(str), team_data['net_rating'], color='teal')
-                            ax.set_ylabel('Net Rating')
-                            ax.set_title(f'{selected_team} - Net Rating by Season')
+                            chart_type = 'net'
+                            y_data = team_data['net_rating']
                         else:
                             st.warning("Net rating data not available")
+                            chart_type = None
                     
-                    ax.set_xlabel('Season')
-                    plt.xticks(rotation=45)
-                    plt.tight_layout()
-                    
-                    # Display the plot
-                    st.pyplot(fig)
+                    # Create and display the chart
+                    if chart_type:
+                        # Create DataFrame for the chart
+                        chart_df = pd.DataFrame({
+                            'season': x_data,
+                            'value': y_data
+                        })
+                        
+                        # Create chart title based on visualization type
+                        chart_title = f"{selected_team} {viz_type}"
+                        
+                        chart = create_team_bar_chart(
+                            df=chart_df,
+                            x_col='season',
+                            y_col='value',
+                            team_name=selected_team,
+                            title=chart_title
+                        )
+                        st.altair_chart(chart, use_container_width=True)
                     
                     # Display the data table
-                    st.subheader("Data Table")
+                    st.subheader("Team Statistics")
                     
                     # Select relevant columns for display
                     display_cols = ['season', 'games_played', 'wins', 'losses', 'win_pct', 
@@ -342,8 +394,9 @@ elif choice == "Data Visualization":
                     if 'net_rating' in team_data.columns:
                         display_cols.extend(['offensive_rating', 'defensive_rating', 'net_rating'])
                     
-                    # Display the data
-                    st.dataframe(team_data[display_cols].sort_values('season', ascending=False))
+                    # Display the data with styling
+                    display_data = team_data[display_cols].sort_values('season', ascending=False)
+                    st.dataframe(style_dataframe(display_data))
                     
                     # Show team rankings if available
                     if not team_rankings_df.empty:
@@ -353,7 +406,9 @@ elif choice == "Data Visualization":
                             # Select ranking columns
                             ranking_cols = [col for col in team_ranking_data.columns if 'rank' in col]
                             ranking_data = team_ranking_data[['season'] + ranking_cols].sort_values('season', ascending=False)
-                            st.dataframe(ranking_data)
+                            
+                            # Display the rankings with styling
+                            st.dataframe(style_dataframe(ranking_data))
             else:
                 st.warning(f"No performance metrics available for {selected_team}")
     else:

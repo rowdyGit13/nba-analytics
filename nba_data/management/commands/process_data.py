@@ -11,7 +11,8 @@ class Command(BaseCommand):
     help = 'Process NBA data for analysis'
 
     def add_arguments(self, parser):
-        parser.add_argument('--season', type=int, help='Season to process (e.g., 2022 for 2022-2023)')
+        parser.add_argument('--season', type=int, 
+                           help='Season to process - provide start year only (e.g., 2022 for 2022-2023 season)')
         parser.add_argument('--export', action='store_true', help='Export processed data to CSV files')
         parser.add_argument('--export-dir', type=str, default='processed_data',
                             help='Directory to export data to (relative to current directory)')
@@ -21,7 +22,13 @@ class Command(BaseCommand):
         export = options.get('export', False)
         export_dir = options.get('export_dir')
         
-        self.stdout.write(f'Processing NBA data{" for season " + str(season) if season else ""}...')
+        # Convert season to YYYY-YYYY format if provided
+        season_str = None
+        if season:
+            season_str = f"{season}-{season+1}"
+            self.stdout.write(f'Processing NBA data for season {season_str}...')
+        else:
+            self.stdout.write('Processing NBA data for all seasons...')
         
         # Create export directory if needed
         if export and not os.path.exists(export_dir):
@@ -49,10 +56,10 @@ class Command(BaseCommand):
                 return
             
             # Filter by season if specified
-            if season:
-                self.stdout.write(f'Filtering data for season {season}...')
+            if season_str:
+                self.stdout.write(f'Filtering data for season {season_str}...')
                 if 'season' in games_df.columns:
-                    games_df = games_df[games_df['season'] == season]
+                    games_df = games_df[games_df['season'] == season_str]
             
             # Step 2: Clean and transform data
             self.stdout.write('Cleaning and transforming player data...')
@@ -104,7 +111,7 @@ class Command(BaseCommand):
                 # Export each dataframe
                 for df, filename in export_items:
                     if not df.empty:
-                        season_suffix = f'_{season}' if season else ''
+                        season_suffix = f'_{season_str}' if season_str else ''
                         output_path = os.path.join(export_dir, f'{filename.split(".")[0]}{season_suffix}.csv')
                         df.to_csv(output_path, index=False)
                         self.stdout.write(f'  Exported {output_path}')

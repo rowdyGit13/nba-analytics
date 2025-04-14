@@ -18,7 +18,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nba_analytics_project.settings'
 import django
 django.setup()
 
-# Make sure the processed data directory exists
+# Make sure the processed data directory exists (for backup CSV files)
 PROCESSED_DATA_DIR = Path(__file__).parent / "data" / "processed"
 os.makedirs(PROCESSED_DATA_DIR, exist_ok=True)
 
@@ -26,17 +26,12 @@ os.makedirs(PROCESSED_DATA_DIR, exist_ok=True)
 if __name__ == "__main__":
     print("Starting NBA Analytics Dashboard...")
     
-    # Run process_data.py to process data and export to CSV files
-    print("Processing NBA data...")
-    
-    # Process current season data
-    import datetime
-    current_year = datetime.datetime.now().year
-    
-    # Process all data currently in the database and save dataframes as CSV files
+    # Generate backup CSV files
+    print("Generating backup CSV files...")
     call_command('process_data', export=True, 
                 export_dir=str(PROCESSED_DATA_DIR))
-    print("✅ Processed all historical data")
+    print("✅ Backup CSV files generated")
     
     # Run the Streamlit app
+    print("Starting Streamlit application...")
     subprocess.run(["streamlit", "run", "streamlit_app/app.py"]) 

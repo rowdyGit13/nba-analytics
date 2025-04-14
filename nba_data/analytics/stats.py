@@ -62,7 +62,7 @@ def calculate_team_rankings(team_stats_df, season=None):
     
     Args:
         team_stats_df (pandas.DataFrame): DataFrame containing team statistics
-        season (int, optional): Season to filter by
+        season (str, optional): Season to filter by in YYYY-YYYY format (e.g., '2022-2023')
         
     Returns:
         pandas.DataFrame: DataFrame with team rankings

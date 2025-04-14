@@ -146,7 +146,7 @@ class Command(BaseCommand):
                             'visitor_team': visitor_team,
                             'home_team_score': game_data['home_team_score'],
                             'visitor_team_score': game_data['visitor_team_score'],
-                            'season': season,
+                            'season': season_str,
                             'status': game_data['status'],
                             'period': game_data.get('period'),
                             'time': game_data.get('time'),

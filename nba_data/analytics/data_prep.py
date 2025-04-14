@@ -113,6 +113,23 @@ def clean_games_data(df):
         if col in cleaned_df.columns:
             # Replace missing values with NaN for consistency
             cleaned_df[col] = pd.to_datetime(cleaned_df[col], errors='coerce')
+            
+    # Ensure season is in YYYY-YYYY format
+    if 'season' in cleaned_df.columns and not cleaned_df.empty:
+        # Process each row individually to handle mixed formats
+        def format_season(season):
+            if isinstance(season, str) and '-' in season:
+                # Already in YYYY-YYYY format
+                return season
+            elif isinstance(season, (int, float)) or (isinstance(season, str) and season.isdigit()):
+                # Convert to int and then to YYYY-YYYY format
+                season_int = int(float(season))
+                return f"{season_int}-{season_int+1}"
+            else:
+                # Just return as is if we can't process it
+                return season
+            
+        cleaned_df['season'] = cleaned_df['season'].apply(format_season)
     
     return cleaned_df
 
@@ -149,6 +166,7 @@ def enhance_game_data(df):
         enhanced_df['month'] = enhanced_df['date'].dt.month_name()
         enhanced_df['year'] = enhanced_df['date'].dt.year
         enhanced_df['hour'] = enhanced_df['datetime'].dt.hour
+
     
     logger.info("Enhanced game DataFrame shape: %s", enhanced_df.shape)
     logger.info("Enhanced game DataFrame summary:\n%s", enhanced_df.describe())
