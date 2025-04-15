@@ -5,7 +5,7 @@ import logging
 from pathlib import Path
 import importlib.util
 
-# Configure logging
+# Configure logging for deb
 logging.basicConfig(level=logging.INFO, 
                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
