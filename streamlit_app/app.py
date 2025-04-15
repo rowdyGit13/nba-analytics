@@ -1,22 +1,7 @@
 import os
 import sys
 from pathlib import Path
-
-# Add parent directory to Python path to find streamlit_app module
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
-
-# Set current directory for relative paths
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Now we can import our modules
-import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import logging
-from datetime import datetime
-import json
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -25,43 +10,91 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
+# Set current directory for relative paths
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Try to add parent directory to Python path if not already there
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+# Now we can import our modules
+try:
+    import streamlit as st
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    logger.info("Successfully imported basic dependencies")
+except ImportError as e:
+    # This will be visible in the Streamlit logs
+    st.error(f"Failed to import basic dependencies: {e}") 
+    sys.exit(1)
+
 # Import our data loader
 try:
-    from data_loader.load_data import get_data
-    from chart_utils import create_team_bar_chart, style_dataframe
-    from team_colors import get_team_colors, get_team_logo
-except ImportError as e:
-    logger.error(f"Error importing modules: {e}")
-    # Try alternative import path
+    # First try direct import (standalone mode)
     try:
+        from data_loader.load_data import get_data
+        logger.info("Loaded data_loader module (standalone mode)")
+    except ImportError:
+        # Then try with streamlit_app prefix (Django integration mode)
         from streamlit_app.data_loader.load_data import get_data
+        logger.info("Loaded data_loader module (Django integration mode)")
+        
+    # Now try importing utility modules
+    try:
+        from chart_utils import create_team_bar_chart, style_dataframe
+        from team_colors import get_team_colors, get_team_logo
+        logger.info("Loaded utility modules (standalone mode)")
+    except ImportError:
         from streamlit_app.chart_utils import create_team_bar_chart, style_dataframe
         from streamlit_app.team_colors import get_team_colors, get_team_logo
-    except ImportError:
-        logger.error("Failed to import required modules")
-        st.error("Failed to load necessary modules. Please check the logs for details.")
-        sys.exit(1)
-
-# Load all required dataframes directly from Django with CSV files as fallback
-logger.info("Loading data for NBA Analytics Dashboard...")
-data = get_data()
-cleaned_players_df = data['players_df']
-cleaned_teams_df = data['teams_df']
-prepared_games_df = data['games_df']
-team_metrics_df = data['team_metrics_df']
-team_rankings_df = data['team_rankings_df']
-
+        logger.info("Loaded utility modules (Django integration mode)")
+        
+except ImportError as e:
+    logger.error(f"Failed to import required modules: {e}")
+    st.error("Failed to load necessary modules. Please check the logs for details.")
+    # Don't exit, we'll handle missing modules gracefully
+    
 # App setup
-st.set_page_config(
-    page_title="NBA Analytics Dashboard",
-    page_icon="🏀",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+try:
+    st.set_page_config(
+        page_title="NBA Analytics Dashboard",
+        page_icon="🏀",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
+except Exception as e:
+    logger.error(f"Error setting page config: {e}")
 
-# Apply custom CSS
-with open(os.path.join(current_dir, "style.css")) as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# Try to apply custom CSS
+try:
+    css_path = os.path.join(current_dir, "style.css")
+    if os.path.exists(css_path):
+        with open(css_path) as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        logger.warning(f"CSS file not found at {css_path}")
+except Exception as e:
+    logger.error(f"Error loading CSS: {e}")
+
+# Try to load all required dataframes
+try:
+    logger.info("Loading data for NBA Analytics Dashboard...")
+    data = get_data()
+    cleaned_players_df = data['players_df']
+    cleaned_teams_df = data['teams_df']
+    prepared_games_df = data['games_df']
+    team_metrics_df = data['team_metrics_df']
+    team_rankings_df = data['team_rankings_df']
+    
+    if (cleaned_players_df.empty or cleaned_teams_df.empty or prepared_games_df.empty):
+        st.error("💀 Failed to load data. The data files may be missing or corrupted.")
+        st.stop()
+except Exception as e:
+    logger.error(f"Error loading data: {e}")
+    st.error("💀 Failed to load data. Please check the application logs.")
+    st.stop()
 
 # Function to get seasons of format YYYY-YYYY
 def get_seasons():
